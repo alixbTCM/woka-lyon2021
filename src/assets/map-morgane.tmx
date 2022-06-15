@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="48" nextobjectid="4">
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="54" nextobjectid="24">
  <editorsettings>
   <export target="../../map.json" format="json"/>
  </editorsettings>
@@ -189,7 +189,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="30" name="Meeting1" width="30" height="30">
+ <layer id="30" name="black-pearl" width="30" height="30">
   <properties>
    <property name="jitsiRoom" value="vessel"/>
   </properties>
@@ -226,7 +226,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2369,2369,2369,2369,2369,0,0,0,0
 </data>
  </layer>
- <layer id="31" name="Meeting2" width="30" height="30" locked="1">
+ <layer id="31" name="quais" width="30" height="30" locked="1">
   <properties>
    <property name="jitsiRoom" value="wharf"/>
   </properties>
@@ -263,7 +263,7 @@
 0,0,0,0,0,0,0,0,0,0,2369,2369,2369,2369,2369,2369,2369,2369,2369,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="32" name="Meeting3" width="30" height="30" locked="1">
+ <layer id="32" name="place" width="30" height="30" locked="1">
   <properties>
    <property name="jitsiRoom" value="place"/>
   </properties>
@@ -300,7 +300,7 @@
 2369,2369,2369,2369,2369,2369,2369,2369,2369,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="33" name="Meeting 4" width="30" height="30" locked="1">
+ <layer id="33" name="champ" width="30" height="30" locked="1">
   <properties>
    <property name="jitsiRoom" value="field"/>
   </properties>
@@ -337,7 +337,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="35" name="Meeting5" width="30" height="30" locked="1">
+ <layer id="35" name="terrier-du-lapin" width="30" height="30" locked="1">
   <properties>
    <property name="jitsiRoom" value="rabbit-hole"/>
   </properties>
@@ -374,7 +374,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="36" name="Meeting6" width="30" height="30" locked="1">
+ <layer id="36" name="caverne" width="30" height="30" locked="1">
   <properties>
    <property name="jitsiRoom" value="cavern"/>
   </properties>
@@ -500,6 +500,40 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="51" name="DisplayPannelZone" width="30" height="30">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,2368,2368,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -1194,4 +1228,36 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
+ <objectgroup id="49" name="meetings-nb-people">
+  <object id="4" name="caverne-nb-people" type="variable" gid="2370" x="0.461948" y="126.168" width="32" height="32">
+   <properties>
+    <property name="default" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="11" name="place-nb-people" type="variable" gid="2370" x="139.755" y="784.646" width="32" height="32">
+   <properties>
+    <property name="default" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="12" name="quais-nb-people" type="variable" gid="2370" x="479.125" y="903.679" width="32" height="32">
+   <properties>
+    <property name="default" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="13" name="black-pearl-nb-people" type="variable" gid="2370" x="751.38" y="807.44" width="32" height="32">
+   <properties>
+    <property name="default" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="14" name="champ-nb-people" type="variable" gid="2370" x="796.967" y="174.288" width="32" height="32">
+   <properties>
+    <property name="default" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="15" name="terrier-du-lapin-nb-people" type="variable" gid="2370" x="385.418" y="169.223" width="32" height="32">
+   <properties>
+    <property name="default" type="int" value="0"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>
