@@ -12,6 +12,11 @@ const cavernCeiling = [
     'Waterfall'
 ]
 
+const ladyOfTheLake = [
+    'Lady-of-the-lake',
+    'Lady-of-the-lake-up'
+]
+
 const meetings = [
     'caverne',
     'terrier-du-lapin',
@@ -21,7 +26,55 @@ const meetings = [
     'black-pearl'
 ]
 
-// Save number of people in meetings
+const showLayers = (layers) => {
+    if (typeof layers === 'string') {
+        WA.room.showLayer(layers)
+    } else {
+        for (let i=0; i<layers.length; i++) {
+            WA.room.showLayer(layers[i])
+        }
+    }
+}
+
+const hideLayers = (layers) => {
+    if (typeof layers === 'string') {
+        WA.room.hideLayer(layers)
+    } else {
+        for (let i=0; i<layers.length; i++) {
+            WA.room.hideLayer(layers[i])
+        }
+    }
+}
+
+// Old man
+let oldManCounter = 0
+let triggerOldManMessage;
+WA.room.onEnterLayer('OldManZone').subscribe(() => {
+    triggerOldManMessage = WA.ui.displayActionMessage({
+        message: "[ESPACE] Parler au vieux sage",
+        callback: () => {
+            oldManCounter++
+            if (oldManCounter === 1) {
+                WA.chat.sendChatMessage('Luuuuuuke, tu dois restaurer l\'équilibre dans la force !', 'Vieux Sage')
+                WA.chat.sendChatMessage('Euh non, je me trompe...', 'Vieux Sage')
+                WA.chat.sendChatMessage('*tousse* *tousse*', 'Vieux Sage')
+                WA.chat.sendChatMessage('Holà Aventurier ! Alors comme ça tu veux te rendre au royaume d\'Avalon ?', 'Vieux Sage')
+                WA.chat.sendChatMessage('Je ne sais pas du tout comment tu peux y aller, mais je crois en toi !', 'Vieux Sage')
+                //WA.chat.sendChatMessage('Une vieille légende raconte que le roi Arthur y aurait été envoyé après avoir sauté au milieu d\' un banc de requins !', 'Vieux Sage')
+                WA.chat.sendChatMessage('Bonne chance, Aventurier !', 'Vieux Sage')
+            } else {
+                WA.chat.sendChatMessage(`Ah, ${WA.player.name} ! Y-a-t\'il eu de l\'avancement dans ta quête ?`, 'Vieux Sage')
+            }
+        }
+    });
+})
+
+WA.room.onLeaveLayer('OldManZone').subscribe(() => {
+    triggerOldManMessage.remove()
+})
+
+// TODO : BUG when user leave from a room :/
+/*// Save number of people in meetings
 for(let i = 0; i<meetings.length; i++) {
     WA.room.onEnterLayer(meetings[i]).subscribe(() => {
         let nbPeople = WA.state[meetings[i] + '-nb-people']
@@ -49,35 +102,27 @@ WA.room.onEnterLayer('DisplayPannelZone').subscribe(() => {
             }
         }
     });
-})
+})*/
 
 let LadyCounter = 0;
 
 
 // Rabbit Hole zone
 WA.room.onEnterLayer("rabbitHoleZone").subscribe(() => {
-    for (let i=0; i<rabbitHoleCeilings.length; i++) {
-        WA.room.hideLayer(rabbitHoleCeilings[i])
-    }
+    hideLayers(rabbitHoleCeilings)
 });
 
 WA.room.onLeaveLayer("rabbitHoleZone").subscribe(() => {
-    for (let i=0; i<rabbitHoleCeilings.length; i++) {
-        WA.room.showLayer(rabbitHoleCeilings[i])
-    }
+    showLayers(rabbitHoleCeilings)
 });
 
 // Cavern zone
 WA.room.onEnterLayer("cavernZone").subscribe(() => {
-    for (let i=0; i<cavernCeiling.length; i++) {
-        WA.room.hideLayer(cavernCeiling[i])
-    }
+    hideLayers(cavernCeiling)
 });
 
 WA.room.onLeaveLayer("cavernZone").subscribe(() => {
-    for (let i=0; i<cavernCeiling.length; i++) {
-        WA.room.showLayer(cavernCeiling[i])
-    }
+    showLayers(cavernCeiling)
 });
 
 // Lady of the lake
@@ -100,10 +145,10 @@ WA.room.onEnterLayer("ladyOfTheLakeZone").subscribe(() => {
         WA.chat.sendChatMessage("Tu ne vas jamais me laisser tranquille en fait ? ...", "Dame du lac")
     }
 
-    WA.room.showLayer('Lady-of-the-lake')
+    showLayers(ladyOfTheLake)
     LadyCounter ++
 })
 
 WA.room.onLeaveLayer("ladyOfTheLakeZone").subscribe(() => {
-    WA.room.hideLayer('Lady-of-the-lake')
+    hideLayers(ladyOfTheLake)
 })
