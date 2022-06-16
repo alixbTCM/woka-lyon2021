@@ -73,6 +73,56 @@ WA.room.onLeaveLayer('OldManZone').subscribe(() => {
     triggerOldManMessage.remove()
 })
 
+// Canons
+let triggerCanonAction
+WA.room.onEnterLayer('Canon1Zone').subscribe(() => {
+    triggerCanonAction = WA.ui.displayActionMessage({
+        message: "[ESPACE] Tirer",
+        callback: () => {
+            WA.state['shootingCanon1'] = true
+
+            setTimeout(() => {
+                WA.state['shootingCanon1'] = false
+            }, 300)
+        }})
+})
+
+WA.room.onLeaveLayer('Canon1Zone').subscribe(() => {
+    triggerCanonAction.remove()
+})
+
+WA.room.onEnterLayer('Canon2Zone').subscribe(() => {
+    triggerCanonAction = WA.ui.displayActionMessage({
+        message: "[ESPACE] Tirer",
+        callback: () => {
+            WA.state['shootingCanon2'] = true
+
+            setTimeout(() => {
+                WA.state['shootingCanon2'] = false
+            }, 300)
+        }})
+})
+
+WA.room.onLeaveLayer('Canon2Zone').subscribe(() => {
+    triggerCanonAction.remove()
+})
+
+WA.state.onVariableChange('shootingCanon2').subscribe((value) => {
+    if (value) {
+        showLayers('Canon2Explosion')
+    } else {
+        hideLayers('Canon2Explosion')
+    }
+})
+
+WA.state.onVariableChange('shootingCanon1').subscribe((value) => {
+    if (value) {
+        showLayers('Canon1Explosion')
+    } else {
+        hideLayers('Canon1Explosion')
+    }
+})
+
 // TODO : BUG when user leave from a room :/
 /*// Save number of people in meetings
 for(let i = 0; i<meetings.length; i++) {
