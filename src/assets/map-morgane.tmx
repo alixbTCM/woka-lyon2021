@@ -50,6 +50,32 @@
  <tileset firstgid="2653" name="canon-explosion" tilewidth="32" tileheight="32" tilecount="1" columns="1">
   <image source="../../canon-explosion.png" width="32" height="32"/>
  </tileset>
+ <tileset firstgid="2654" name="sharks" tilewidth="32" tileheight="32" tilecount="20" columns="4">
+  <image source="../../sharks.png" width="128" height="160"/>
+  <tile id="19">
+   <animation>
+    <frame tileid="0" duration="100"/>
+    <frame tileid="1" duration="100"/>
+    <frame tileid="2" duration="100"/>
+    <frame tileid="3" duration="100"/>
+    <frame tileid="4" duration="100"/>
+    <frame tileid="5" duration="100"/>
+    <frame tileid="6" duration="100"/>
+    <frame tileid="7" duration="100"/>
+    <frame tileid="8" duration="100"/>
+    <frame tileid="9" duration="100"/>
+    <frame tileid="10" duration="100"/>
+    <frame tileid="11" duration="100"/>
+    <frame tileid="12" duration="100"/>
+    <frame tileid="13" duration="100"/>
+    <frame tileid="14" duration="100"/>
+    <frame tileid="15" duration="100"/>
+    <frame tileid="16" duration="100"/>
+    <frame tileid="17" duration="100"/>
+    <frame tileid="18" duration="100"/>
+   </animation>
+  </tile>
+ </tileset>
  <layer id="26" name="start" width="30" height="30" locked="1">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -849,7 +875,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2418,2404,2404,2404,2422,0,0,0,0,
 0,0,0,0,0,0,0,0,1073742183,1073742183,1073742183,0,0,0,0,0,0,0,1073742190,1073742191,1073742192,2404,2404,2404,2404,2438,0,0,0,0,
 0,0,0,0,0,0,0,0,359,359,359,0,0,0,0,2440,0,0,366,367,368,2404,2404,2404,2404,2438,0,0,0,0,
-0,0,730,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2434,2404,2404,2404,2684355250,2684355242,0,0,0,
+0,0,730,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2434,2404,2404,2404,2684355250,2684355242,2673,0,0,
 0,730,0,0,0,730,0,730,0,0,0,0,0,0,0,0,0,0,0,0,0,2434,2404,2404,2404,2438,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2434,2404,2404,2404,2438,0,0,0,0,
 0,0,730,0,730,0,0,0,0,0,1742,0,0,0,0,0,0,0,1744,0,0,2434,2404,2404,2404,2438,0,0,0,0,
