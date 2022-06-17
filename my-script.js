@@ -1,3 +1,5 @@
+import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
+
 const rabbitHoleCeilings = [
     'Ceiling-alice-1',
     'Ceiling-alice-2',
