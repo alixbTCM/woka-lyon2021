@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="69" nextobjectid="29">
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="32" tileheight="32" infinite="0" nextlayerid="70" nextobjectid="30">
  <editorsettings>
   <export target="../../map.json" format="json"/>
  </editorsettings>
@@ -1210,6 +1210,14 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
+ <objectgroup id="69" name="avalonQuest">
+  <object id="29" name="showOldMan" type="variable" x="402.253" y="433.284">
+   <properties>
+    <property name="default" type="bool" value="false"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
  <layer id="64" name="closedRabbitDoor" width="30" height="30">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,

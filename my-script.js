@@ -61,8 +61,13 @@ WA.room.onEnterLayer('OldManZone').subscribe(() => {
                 WA.chat.sendChatMessage('Euh non, je me trompe...', 'Vieux Sage')
                 WA.chat.sendChatMessage('*tousse* *tousse*', 'Vieux Sage')
                 WA.chat.sendChatMessage('Holà Aventurier ! Alors comme ça tu veux te rendre au royaume d\'Avalon ?', 'Vieux Sage')
+
+                // TODO : Delete this line
                 WA.chat.sendChatMessage('Je ne sais pas du tout comment tu peux y aller, mais je crois en toi !', 'Vieux Sage')
+
+                // TODO : Uncomment these lines
                 //WA.chat.sendChatMessage('Une vieille légende raconte que le roi Arthur y aurait été envoyé après avoir sauté au milieu d\' un banc de requins !', 'Vieux Sage')
+                //WA.chat.sendChatMessage('Comment ?! Tu as peur des requins ?!? Du nerf, Aventurier ! Tiens, bois cette potion, elle te donnera du courage. Et maintenant OUSTE ! Js suis occupé.', 'Vieux Sage')
                 WA.chat.sendChatMessage('Bonne chance, Aventurier !', 'Vieux Sage')
             } else {
                 WA.chat.sendChatMessage(`Ah, ${WA.player.name} ! Y-a-t\'il eu de l\'avancement dans ta quête ?`, 'Vieux Sage')
@@ -74,6 +79,22 @@ WA.room.onEnterLayer('OldManZone').subscribe(() => {
 WA.room.onLeaveLayer('OldManZone').subscribe(() => {
     triggerOldManMessage.remove()
 })
+
+// Listening chat message
+WA.chat.onChatMessage((message) => {
+    if (message.trim().toLowerCase() === "avalon" && !WA.state['showOldMan']) {
+        // TODO : Variable to show old man for all players
+        WA.state['showOldMan'] = true
+        WA.chat.sendChatMessage('Je viens d\'appeler le gardien d\'Avalon', 'Ma voix intérieure');
+    }
+})
+
+WA.state.onVariableChange('showOldMan').subscribe((value) => {
+    if (value) {
+        WA.chat.sendChatMessage('Le vieux sage a été appelé, quelqu\'un semble vouloir se rendre à Avalon !', 'Dame du Lac');
+    }
+})
+
 
 // Canons
 let triggerCanonAction
