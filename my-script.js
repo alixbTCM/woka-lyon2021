@@ -55,22 +55,27 @@ WA.room.onEnterLayer('OldManZone').subscribe(() => {
     triggerOldManMessage = WA.ui.displayActionMessage({
         message: "[ESPACE] Parler au vieux sage",
         callback: () => {
-            oldManCounter++
-            if (oldManCounter === 1) {
-                WA.chat.sendChatMessage('Luuuuuuke, tu dois restaurer l\'équilibre dans la force !', 'Vieux Sage')
-                WA.chat.sendChatMessage('Euh non, je me trompe...', 'Vieux Sage')
-                WA.chat.sendChatMessage('*tousse* *tousse*', 'Vieux Sage')
-                WA.chat.sendChatMessage('Holà Aventurier ! Alors comme ça tu veux te rendre au royaume d\'Avalon ?', 'Vieux Sage')
+            if (WA.state['showOldMan'] ) {
+                oldManCounter++
+                if (oldManCounter === 1) {
+                    WA.chat.sendChatMessage('Luuuuuuke, tu dois restaurer l\'équilibre dans la force !', 'Vieux Sage')
+                    WA.chat.sendChatMessage('Euh non, je me trompe...', 'Vieux Sage')
+                    WA.chat.sendChatMessage('*tousse* *tousse*', 'Vieux Sage')
+                    WA.chat.sendChatMessage('Holà Aventurier ! Alors comme ça tu veux te rendre au royaume d\'Avalon ?', 'Vieux Sage')
 
-                // TODO : Delete this line
-                WA.chat.sendChatMessage('Je ne sais pas du tout comment tu peux y aller, mais je crois en toi !', 'Vieux Sage')
+                    // TODO : Delete this line
+                    WA.chat.sendChatMessage('Je ne sais pas du tout comment tu peux y aller, mais je crois en toi !', 'Vieux Sage')
 
-                // TODO : Uncomment these lines
-                //WA.chat.sendChatMessage('Une vieille légende raconte que le roi Arthur y aurait été envoyé après avoir sauté au milieu d\' un banc de requins !', 'Vieux Sage')
-                //WA.chat.sendChatMessage('Comment ?! Tu as peur des requins ?!? Du nerf, Aventurier ! Tiens, bois cette potion, elle te donnera du courage. Et maintenant OUSTE ! Js suis occupé.', 'Vieux Sage')
-                WA.chat.sendChatMessage('Bonne chance, Aventurier !', 'Vieux Sage')
-            } else {
-                WA.chat.sendChatMessage(`Ah, ${WA.player.name} ! Y-a-t\'il eu de l\'avancement dans ta quête ?`, 'Vieux Sage')
+                    // TODO : Uncomment these lines
+                    //WA.chat.sendChatMessage('Une vieille légende raconte que le roi Arthur y aurait été envoyé après avoir sauté au milieu d\' un banc de requins !', 'Vieux Sage')
+                    //WA.chat.sendChatMessage('Comment ?! Tu as peur des requins ?!? Du nerf, Aventurier ! Tiens, bois cette potion, elle te donnera du courage. Et maintenant OUSTE ! Js suis occupé.', 'Vieux Sage')
+                    WA.chat.sendChatMessage('Bonne chance, Aventurier !', 'Vieux Sage')
+                } else {
+                    WA.chat.sendChatMessage(`Ah, ${WA.player.name} ! Y-a-t\'il eu de l\'avancement dans ta quête ?`, 'Vieux Sage')
+                }
+            }
+            else {
+                WA.chat.sendChatMessage('Quelle jolie statue !', 'Ma voix intérieure')
             }
         }
     });
@@ -91,7 +96,21 @@ WA.chat.onChatMessage((message) => {
 
 WA.state.onVariableChange('showOldMan').subscribe((value) => {
     if (value) {
+        hideLayers("OldManStone")
         WA.chat.sendChatMessage('Le vieux sage a été appelé, quelqu\'un semble vouloir se rendre à Avalon !', 'Dame du Lac');
+
+        showLayers('Pouf1')
+        setTimeout(() => {
+            hideLayers('Pouf1')
+            showLayers('Pouf2')
+            setTimeout(() => {
+                hideLayers('Pouf2')
+                showLayers('Pouf3')
+                setTimeout(() => {
+                    hideLayers('Pouf3')
+                }, 300)
+            }, 300)
+        }, 300)
     }
 })
 
