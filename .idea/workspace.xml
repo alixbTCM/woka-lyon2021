@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="154804f8-a4f2-45a9-bced-0b7f3f631b1f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BrightForest-A1 (3) (2).tsx" beforeDir="false" afterPath="$PROJECT_DIR$/BrightForest-A1 (3) (2).tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cave1-A1.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Cave1-A1.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cave1-EarthA5.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Cave1-EarthA5.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cave1-EarthB.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Cave1-EarthB.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/[A]Dirt2_pipo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/[A]Dirt2_pipo.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/map.json" beforeDir="false" afterPath="$PROJECT_DIR$/map.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +26,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="25ButK0han6Dbo4PVyy3uhYkkPO" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -28,11 +37,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Projets\woka-lyon2021\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projets\woka-lyon2021\src\assets" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -44,10 +59,27 @@
       <updated>1645013014200</updated>
       <workItem from="1645013016460" duration="1633000" />
       <workItem from="1645442507290" duration="657000" />
+      <workItem from="1655290548610" duration="668000" />
+      <workItem from="1655390606590" duration="804000" />
+      <workItem from="1655473587359" duration="594000" />
+      <workItem from="1655811513263" duration="895000" />
+      <workItem from="1655814778608" duration="9422000" />
+      <workItem from="1655880984743" duration="595000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -14,6 +14,8 @@ const cavernCeiling = [
     'Waterfall'
 ]
 
+const bleedZone = ['bleed']
+
 const ladyOfTheLake = [
     'Lady-of-the-lake',
     'Lady-of-the-lake-up'
@@ -244,3 +246,62 @@ WA.room.onEnterLayer("ladyOfTheLakeZone").subscribe(() => {
 WA.room.onLeaveLayer("ladyOfTheLakeZone").subscribe(() => {
     hideLayers(ladyOfTheLake)
 })
+
+const bleedAreasPosition = [
+    {
+        x: 2,
+        y: 19,
+    },
+    {
+        x: 2,
+        y: 18,
+    },
+    {
+        x: 2,
+        y: 17,
+    },
+]
+const bleedingAreas = []
+
+const createBleedingAreas = ()=> {
+    for (let i = 0; i < bleedAreasPosition.length; i++) {
+        bleedingAreas[i] = WA.room.area.create({
+            name: `bleedingArea-${i}`,
+            x: bleedAreasPosition[i].x,
+            y: bleedAreasPosition[i].y,
+            width: 32,
+            height: 32,
+        })
+        console.log(bleedingAreas[i])
+    }
+}
+
+const onEnterInBleedArea = () => {
+    for (let i = 0; i < bleedAreasPosition.length; i++) {
+        WA.room.area.onEnter(`bleedingArea-${i}`).subscribe(() => {
+            console.log(`bleedingArea-${i}`)
+            WA.room.setTiles([
+                {
+                    x: bleedAreasPosition[i].x,
+                    y: bleedAreasPosition[i].y,
+                    tile: "bleedingAnimate",
+                    layer: "bleed"
+                },
+            ]);
+        });
+    }
+}
+
+const setUpBleedArea = async () => {
+    await createBleedingAreas()
+    await onEnterInBleedArea()
+}
+
+
+// WA.room.onEnterLayer("bleed").subscribe(() => {
+//     hideLayers(cavernCeiling)
+// });
+
+
+
+
