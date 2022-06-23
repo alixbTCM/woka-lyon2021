@@ -94,7 +94,6 @@ WA.room.onLeaveLayer('OldManZone').subscribe(() => {
 // Listening chat message
 WA.chat.onChatMessage((message) => {
     if (message.trim().toLowerCase() === "avalon" && !WA.state['showOldMan']) {
-        // TODO : Variable to show old man for all players
         WA.state['showOldMan'] = true
         WA.chat.sendChatMessage('Je viens d\'appeler le gardien d\'Avalon', 'Ma voix intérieure');
     }
