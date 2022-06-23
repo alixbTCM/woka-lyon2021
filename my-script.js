@@ -28,6 +28,14 @@ const meetings = [
     'black-pearl'
 ]
 
+// Phrases admiratives pour la statue du vieux sage
+const admirations =  [
+    "Quelle jolie statue !",
+    "On reconnaît bien l'influence expressioniste du sculpteur...",
+    "Une critique des dérives du capitalisme sans doute.",
+    "Le modèle me rappelle quelque chose"
+]
+
 const showLayers = (layers) => {
     if (typeof layers === 'string') {
         WA.room.showLayer(layers)
@@ -53,7 +61,7 @@ let oldManCounter = 0
 let triggerOldManMessage;
 WA.room.onEnterLayer('OldManZone').subscribe(() => {
     triggerOldManMessage = WA.ui.displayActionMessage({
-        message: "[ESPACE] Parler au vieux sage",
+        message: WA.state['showOldMan'] ? "[ESPACE] Parler au vieux sage" : "[ESPACE] Admirer la statue",
         callback: () => {
             if (WA.state['showOldMan'] ) {
                 oldManCounter++
@@ -62,20 +70,18 @@ WA.room.onEnterLayer('OldManZone').subscribe(() => {
                     WA.chat.sendChatMessage('Euh non, je me trompe...', 'Vieux Sage')
                     WA.chat.sendChatMessage('*tousse* *tousse*', 'Vieux Sage')
                     WA.chat.sendChatMessage('Holà Aventurier ! Alors comme ça tu veux te rendre au royaume d\'Avalon ?', 'Vieux Sage')
-
-                    // TODO : Delete this line
-                    WA.chat.sendChatMessage('Je ne sais pas du tout comment tu peux y aller, mais je crois en toi !', 'Vieux Sage')
-
-                    // TODO : Uncomment these lines
-                    //WA.chat.sendChatMessage('Une vieille légende raconte que le roi Arthur y aurait été envoyé après avoir sauté au milieu d\' un banc de requins !', 'Vieux Sage')
-                    //WA.chat.sendChatMessage('Comment ?! Tu as peur des requins ?!? Du nerf, Aventurier ! Tiens, bois cette potion, elle te donnera du courage. Et maintenant OUSTE ! Js suis occupé.', 'Vieux Sage')
+                    WA.chat.sendChatMessage('Une vieille légende raconte que le roi Arthur y aurait été envoyé après avoir sauté au milieu d\' un banc de requins !', 'Vieux Sage')
+                    WA.chat.sendChatMessage('Comment ?! Tu as peur des requins ?!? Du nerf, Aventurier ! Tiens, bois cette potion, elle te donnera du courage. Et maintenant OUSTE ! Js suis occupé.', 'Vieux Sage')
                     WA.chat.sendChatMessage('Bonne chance, Aventurier !', 'Vieux Sage')
+
+                    WA.room.setTiles([{x: 27, y: 22, tile: null, layer: 'BlockingSharks'}])
                 } else {
                     WA.chat.sendChatMessage(`Ah, ${WA.player.name} ! Y-a-t\'il eu de l\'avancement dans ta quête ?`, 'Vieux Sage')
                 }
             }
             else {
-                WA.chat.sendChatMessage('Quelle jolie statue !', 'Ma voix intérieure')
+                const random = Math.floor(Math.random() * admirations.length)
+                WA.chat.sendChatMessage(admirations[random], 'Ma voix intérieure')
             }
         }
     });
