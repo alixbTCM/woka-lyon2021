@@ -1,60 +1,8 @@
 import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
+import { toggleLayersVisibility } from './utils.js'
+import { principalMapLayers } from './constants/maps-layers.js'
+import { principalMapDialogs } from './constants/maps-dialogs.js'
 
-const rabbitHoleCeilings = [
-    'Ceiling-alice-1',
-    'Ceiling-alice-2',
-    'Ceiling-alice-3',
-    'Ceiling-alice-0',
-    'Ceiling-alice-01',
-]
-
-const cavernCeiling = [
-    'Ceiling-cave-2',
-    'Ceiling-cave-1',
-    'Waterfall'
-]
-
-const ladyOfTheLake = [
-    'Lady-of-the-lake',
-    'Lady-of-the-lake-up'
-]
-
-const meetings = [
-    'caverne',
-    'terrier-du-lapin',
-    'champ',
-    'place',
-    'quais',
-    'black-pearl'
-]
-
-// Phrases admiratives pour la statue du vieux sage
-const admirations =  [
-    "Quelle jolie statue !",
-    "On reconnaît bien l'influence expressioniste du sculpteur...",
-    "Une critique des dérives du capitalisme sans doute.",
-    "Le modèle me rappelle quelque chose"
-]
-
-const showLayers = (layers) => {
-    if (typeof layers === 'string') {
-        WA.room.showLayer(layers)
-    } else {
-        for (let i=0; i<layers.length; i++) {
-            WA.room.showLayer(layers[i])
-        }
-    }
-}
-
-const hideLayers = (layers) => {
-    if (typeof layers === 'string') {
-        WA.room.hideLayer(layers)
-    } else {
-        for (let i=0; i<layers.length; i++) {
-            WA.room.hideLayer(layers[i])
-        }
-    }
-}
 
 // Old man
 let oldManCounter = 0
@@ -80,8 +28,8 @@ WA.room.onEnterLayer('OldManZone').subscribe(() => {
                 }
             }
             else {
-                const random = Math.floor(Math.random() * admirations.length)
-                WA.chat.sendChatMessage(admirations[random], 'Ma voix intérieure')
+                const random = Math.floor(Math.random() * principalMapDialogs.oldManStoneAdmirations.length)
+                WA.chat.sendChatMessage(principalMapDialogs.oldManStoneAdmirations[random], 'Ma voix intérieure')
             }
         }
     });
@@ -101,18 +49,18 @@ WA.chat.onChatMessage((message) => {
 
 WA.state.onVariableChange('showOldMan').subscribe((value) => {
     if (value) {
-        hideLayers("OldManStone")
+        toggleLayersVisibility("OldManStone", false)
         WA.chat.sendChatMessage('Le vieux sage a été appelé, quelqu\'un semble vouloir se rendre à Avalon !', 'Dame du Lac');
 
-        showLayers('Pouf1')
+        toggleLayersVisibility('Pouf1')
         setTimeout(() => {
-            hideLayers('Pouf1')
-            showLayers('Pouf2')
+            toggleLayersVisibility('Pouf1', false)
+            toggleLayersVisibility('Pouf2')
             setTimeout(() => {
-                hideLayers('Pouf2')
-                showLayers('Pouf3')
+                toggleLayersVisibility('Pouf2', false)
+                toggleLayersVisibility('Pouf3')
                 setTimeout(() => {
-                    hideLayers('Pouf3')
+                    toggleLayersVisibility('Pouf3', false)
                 }, 300)
             }, 300)
         }, 300)
@@ -156,17 +104,17 @@ WA.room.onLeaveLayer('Canon2Zone').subscribe(() => {
 
 WA.state.onVariableChange('shootingCanon2').subscribe((value) => {
     if (value) {
-        showLayers('Canon2Explosion')
+        toggleLayersVisibility('Canon2Explosion')
     } else {
-        hideLayers('Canon2Explosion')
+        toggleLayersVisibility('Canon2Explosion', false)
     }
 })
 
 WA.state.onVariableChange('shootingCanon1').subscribe((value) => {
     if (value) {
-        showLayers('Canon1Explosion')
+        toggleLayersVisibility('Canon1Explosion')
     } else {
-        hideLayers('Canon1Explosion')
+        toggleLayersVisibility('Canon1Explosion', false)
     }
 })
 
@@ -206,20 +154,20 @@ let LadyCounter = 0;
 
 // Rabbit Hole zone
 WA.room.onEnterLayer("rabbitHoleZone").subscribe(() => {
-    hideLayers(rabbitHoleCeilings)
+    toggleLayersVisibility(principalMapLayers.rabbitHoleCeilings, false)
 });
 
 WA.room.onLeaveLayer("rabbitHoleZone").subscribe(() => {
-    showLayers(rabbitHoleCeilings)
+    toggleLayersVisibility(principalMapLayers.rabbitHoleCeilings)
 });
 
 // Cavern zone
 WA.room.onEnterLayer("cavernZone").subscribe(() => {
-    hideLayers(cavernCeiling)
+    toggleLayersVisibility(principalMapLayers.cavernCeiling, false)
 });
 
 WA.room.onLeaveLayer("cavernZone").subscribe(() => {
-    showLayers(cavernCeiling)
+    toggleLayersVisibility(principalMapLayers.cavernCeiling)
 });
 
 // Lady of the lake
@@ -242,10 +190,10 @@ WA.room.onEnterLayer("ladyOfTheLakeZone").subscribe(() => {
         WA.chat.sendChatMessage("Tu ne vas jamais me laisser tranquille en fait ? ...", "Dame du lac")
     }
 
-    showLayers(ladyOfTheLake)
+    toggleLayersVisibility(principalMapLayers.ladyOfTheLake)
     LadyCounter ++
 })
 
 WA.room.onLeaveLayer("ladyOfTheLakeZone").subscribe(() => {
-    hideLayers(ladyOfTheLake)
+    toggleLayersVisibility(principalMapLayers.ladyOfTheLake, false)
 })
