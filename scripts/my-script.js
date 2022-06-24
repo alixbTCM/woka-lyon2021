@@ -2,6 +2,7 @@ import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 import { toggleLayersVisibility } from './utils.js'
 import { principalMapLayers } from './constants/maps-layers.js'
 import { principalMapDialogs } from './constants/maps-dialogs.js'
+import { oldManName, ladyOfTheLakeName, myselfName} from './constants/character-names.js';
 
 
 // Old man
@@ -14,22 +15,22 @@ WA.room.onEnterLayer('OldManZone').subscribe(() => {
             if (WA.state['showOldMan'] ) {
                 oldManCounter++
                 if (oldManCounter === 1) {
-                    WA.chat.sendChatMessage('Luuuuuuke, tu dois restaurer l\'équilibre dans la force !', 'Vieux Sage')
-                    WA.chat.sendChatMessage('Euh non, je me trompe...', 'Vieux Sage')
-                    WA.chat.sendChatMessage('*tousse* *tousse*', 'Vieux Sage')
-                    WA.chat.sendChatMessage('Holà Aventurier ! Alors comme ça tu veux te rendre au royaume d\'Avalon ?', 'Vieux Sage')
-                    WA.chat.sendChatMessage('Une vieille légende raconte que le roi Arthur y aurait été envoyé après avoir sauté au milieu d\' un banc de requins !', 'Vieux Sage')
-                    WA.chat.sendChatMessage('Comment ?! Tu as peur des requins ?!? Du nerf, Aventurier ! Tiens, bois cette potion, elle te donnera du courage. Et maintenant OUSTE ! Js suis occupé.', 'Vieux Sage')
-                    WA.chat.sendChatMessage('Bonne chance, Aventurier !', 'Vieux Sage')
+                    WA.chat.sendChatMessage('Luuuuuuke, tu dois restaurer l\'équilibre dans la force !', oldManName)
+                    WA.chat.sendChatMessage('Euh non, je me trompe...', oldManName)
+                    WA.chat.sendChatMessage('*tousse* *tousse*', oldManName)
+                    WA.chat.sendChatMessage('Holà Aventurier ! Alors comme ça tu veux te rendre au royaume d\'Avalon ?', oldManName)
+                    WA.chat.sendChatMessage('Une vieille légende raconte que le roi Arthur y aurait été envoyé après avoir sauté au milieu d\' un banc de requins !', oldManName)
+                    WA.chat.sendChatMessage('Comment ?! Tu as peur des requins ?!? Du nerf, Aventurier ! Tiens, bois cette potion, elle te donnera du courage. Et maintenant OUSTE ! Js suis occupé.', oldManName)
+                    WA.chat.sendChatMessage('Bonne chance, Aventurier !', oldManName)
 
                     WA.room.setTiles([{x: 27, y: 22, tile: null, layer: 'BlockingSharks'}])
                 } else {
-                    WA.chat.sendChatMessage(`Ah, ${WA.player.name} ! Y-a-t\'il eu de l\'avancement dans ta quête ?`, 'Vieux Sage')
+                    WA.chat.sendChatMessage(`Ah, ${WA.player.name} ! Y-a-t\'il eu de l\'avancement dans ta quête ?`, oldManName)
                 }
             }
             else {
                 const random = Math.floor(Math.random() * principalMapDialogs.oldManStoneAdmirations.length)
-                WA.chat.sendChatMessage(principalMapDialogs.oldManStoneAdmirations[random], 'Ma voix intérieure')
+                WA.chat.sendChatMessage(principalMapDialogs.oldManStoneAdmirations[random], myselfName)
             }
         }
     });
@@ -43,14 +44,14 @@ WA.room.onLeaveLayer('OldManZone').subscribe(() => {
 WA.chat.onChatMessage((message) => {
     if (message.trim().toLowerCase() === "avalon" && !WA.state['showOldMan']) {
         WA.state['showOldMan'] = true
-        WA.chat.sendChatMessage('Je viens d\'appeler le gardien d\'Avalon', 'Ma voix intérieure');
+        WA.chat.sendChatMessage('Je viens d\'appeler le gardien d\'Avalon', myselfName);
     }
 })
 
 WA.state.onVariableChange('showOldMan').subscribe((value) => {
     if (value) {
         toggleLayersVisibility("OldManStone", false)
-        WA.chat.sendChatMessage('Le vieux sage a été appelé, quelqu\'un semble vouloir se rendre à Avalon !', 'Dame du Lac');
+        WA.chat.sendChatMessage('Le vieux sage a été appelé, quelqu\'un semble vouloir se rendre à Avalon !', ladyOfTheLakeName);
 
         toggleLayersVisibility('Pouf1')
         setTimeout(() => {
@@ -173,21 +174,21 @@ WA.room.onLeaveLayer("cavernZone").subscribe(() => {
 // Lady of the lake
 WA.room.onEnterLayer("ladyOfTheLakeZone").subscribe(() => {
     if (LadyCounter === 0) {
-        WA.chat.sendChatMessage("Halte-là !", "Dame du lac")
-        WA.chat.sendChatMessage("Vous n'êtes pas dignes d'un tel honneur !", "Dame du lac")
-        WA.chat.sendChatMessage("Seul les preux chevaliers ayant bravé les dangers d'Avalon peuvent prétendre devenir rois en retirant l'épée !", "Dame du lac")
+        WA.chat.sendChatMessage("Halte-là !", ladyOfTheLakeName)
+        WA.chat.sendChatMessage("Vous n'êtes pas dignes d'un tel honneur !", ladyOfTheLakeName)
+        WA.chat.sendChatMessage("Seul les preux chevaliers ayant bravé les dangers d'Avalon peuvent prétendre devenir rois en retirant l'épée !", ladyOfTheLakeName)
     }
 
     if (LadyCounter === 1) {
-        WA.chat.sendChatMessage("VOUS ne passerez PAS !", "Dame du lac")
+        WA.chat.sendChatMessage("VOUS ne passerez PAS !", ladyOfTheLakeName)
     }
 
     if (LadyCounter === 2) {
-        WA.chat.sendChatMessage("Je t'ai dit d'aller à AVALON !", "Dame du lac")
+        WA.chat.sendChatMessage("Je t'ai dit d'aller à AVALON !", ladyOfTheLakeName)
     }
 
     if (LadyCounter > 2) {
-        WA.chat.sendChatMessage("Tu ne vas jamais me laisser tranquille en fait ? ...", "Dame du lac")
+        WA.chat.sendChatMessage("Tu ne vas jamais me laisser tranquille en fait ? ...", ladyOfTheLakeName)
     }
 
     toggleLayersVisibility(principalMapLayers.ladyOfTheLake)
