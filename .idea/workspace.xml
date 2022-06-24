@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="154804f8-a4f2-45a9-bced-0b7f3f631b1f" name="Changes" comment="">
+    <list default="true" id="154804f8-a4f2-45a9-bced-0b7f3f631b1f" name="Changes" comment="water test setup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BrightForest-A1 (3) (2).tsx" beforeDir="false" afterPath="$PROJECT_DIR$/BrightForest-A1 (3) (2).tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cave1-A1.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Cave1-A1.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cave1-EarthA5.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Cave1-EarthA5.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cave1-EarthB.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Cave1-EarthB.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/[A]Dirt2_pipo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/[A]Dirt2_pipo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map.json" beforeDir="false" afterPath="$PROJECT_DIR$/map.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addwork.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/addwork.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/water-test.json" beforeDir="false" afterPath="$PROJECT_DIR$/water-test.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +44,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Projets\woka-lyon2021\src\assets" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projets\woka-lyon2021" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -64,8 +63,16 @@
       <workItem from="1655473587359" duration="594000" />
       <workItem from="1655811513263" duration="895000" />
       <workItem from="1655814778608" duration="9422000" />
-      <workItem from="1655880984743" duration="595000" />
+      <workItem from="1655880984743" duration="8272000" />
     </task>
+    <task id="LOCAL-00001" summary="water test setup">
+      <created>1655888865291</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1655888865291</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -81,5 +88,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="water test setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="water test setup" />
   </component>
 </project>
