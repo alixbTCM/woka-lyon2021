@@ -1,3 +1,10 @@
+
+const wait = (time) => {
+    return new Promise(resolve => {
+        setTimeout(resolve, time);
+    });
+}
+
 const toggleLayersVisibility = (layers, visible = true) => {
     if (typeof layers === 'string') {
         if (visible) {
@@ -18,6 +25,17 @@ const toggleLayersVisibility = (layers, visible = true) => {
     }
 }
 
+const triggerAnimationWithLayers = async (layers, time=300) => {
+    toggleLayersVisibility(layers[0])
+    for (let i = 1; i<layers.length; i++) {
+        await wait(time)
+        toggleLayersVisibility(layers[i-1], false)
+        toggleLayersVisibility(layers[i])
+    }
+    toggleLayersVisibility(layers[layers.length-1], false)
+}
+
 export {
-    toggleLayersVisibility
+    toggleLayersVisibility,
+    triggerAnimationWithLayers
 }

@@ -1,8 +1,9 @@
 import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
-import { toggleLayersVisibility } from './utils.js'
+import { toggleLayersVisibility, triggerAnimationWithLayers } from './utils.js'
 import { principalMapLayers } from './constants/maps-layers.js'
 import { principalMapDialogs } from './constants/maps-dialogs.js'
 import { oldManName, ladyOfTheLakeName, myselfName} from './constants/character-names.js';
+import { principalMapAnimationLayers } from './constants/maps-animation-layers.js'
 
 
 // Old man
@@ -53,18 +54,7 @@ WA.state.onVariableChange('showOldMan').subscribe((value) => {
         toggleLayersVisibility("OldManStone", false)
         WA.chat.sendChatMessage('Le vieux sage a été appelé, quelqu\'un semble vouloir se rendre à Avalon !', ladyOfTheLakeName);
 
-        toggleLayersVisibility('Pouf1')
-        setTimeout(() => {
-            toggleLayersVisibility('Pouf1', false)
-            toggleLayersVisibility('Pouf2')
-            setTimeout(() => {
-                toggleLayersVisibility('Pouf2', false)
-                toggleLayersVisibility('Pouf3')
-                setTimeout(() => {
-                    toggleLayersVisibility('Pouf3', false)
-                }, 300)
-            }, 300)
-        }, 300)
+        triggerAnimationWithLayers(principalMapAnimationLayers.pouf)
     }
 })
 
