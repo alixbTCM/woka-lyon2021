@@ -1,4 +1,7 @@
 import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
+import {racingTestRuleName, waterTestRuleName} from './constants/character-names.js';
+import {racingTestRules, waterTestRules} from './constants/maps-game-rules.js';
+import {writeMultiLinesText} from "./utils.js";
 
 WA.room.onEnterLayer('startRacing').subscribe( async()=> {
     const startTime = new Date
@@ -34,11 +37,19 @@ WA.room.onEnterLayer('stop').subscribe(() => {
 
 });
 
+let triggerTuto;
 WA.room.onEnterLayer('tuto').subscribe(() => {
-    WA.chat.sendChatMessage('Bienvenu dans l\'épreuve de rapidité ! Vous devez finir la course le plus ' +
-        'rapidement possible, si vous n\'y arrivez pas, vous devrez recommencer pour continuer votre quête. ' +
-        'Aller on se bouge les fesses !', 'Maître du temps')
-});
+    triggerTuto = WA.ui.displayActionMessage({
+        message: "[ESPACE] Voir les règles" ,
+        callback: () => {
+            writeMultiLinesText(racingTestRules, racingTestRuleName)
+        }
+    });
+})
+
+WA.room.onLeaveLayer('tuto').subscribe(() => {
+    triggerTuto.remove()
+})
 
 
 
