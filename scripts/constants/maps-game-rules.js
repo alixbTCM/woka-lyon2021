@@ -10,7 +10,21 @@ const escapeMapeGameRules = [
     'Bonne chance !'
 ]
 
+const waterTestRules = [
+    "De l'autre côté de la rive se trouve le mirroir qui vous enménera vers la prochaine épreuve. ",
+    "C'est très simple, il vous suffit de traverser, qu'attendez-vous?"
+]
+
+const racingTestRules = [
+    'Bienvenue dans l\'épreuve de rapidité !',
+    'Vous devez finir la course le plus rapidement possible.',
+    'Si vous n\'y arrivez pas, vous devrez recommencer pour continuer votre quête. ',
+    'Aller on se bouge les fesses !'
+]
+
 export {
     graalMapGameRules,
-    escapeMapeGameRules
+    escapeMapeGameRules,
+    racingTestRules,
+    waterTestRules
 }
