@@ -924,6 +924,53 @@
         }, 
         {
          "draworder":"topdown",
+         "id":77,
+         "name":"otherVariables",
+         "objects":[
+                {
+                 "height":0,
+                 "id":30,
+                 "name":"selectRandomPlayer",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"default",
+                         "type":"string",
+                         "value":""
+                        }],
+                 "rotation":0,
+                 "type":"variable",
+                 "visible":true,
+                 "width":0,
+                 "x":413.569401270442,
+                 "y":647.38478172726
+                }, 
+                {
+                 "height":0,
+                 "id":31,
+                 "name":"randomPlayersList",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"default",
+                         "type":"string",
+                         "value":""
+                        }],
+                 "rotation":0,
+                 "type":"variable",
+                 "visible":true,
+                 "width":0,
+                 "x":487.903770779835,
+                 "y":650.08784970942
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
          "id":62,
          "name":"doors",
          "objects":[
@@ -966,8 +1013,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":77,
- "nextobjectid":30,
+ "nextlayerid":78,
+ "nextobjectid":32,
  "orientation":"orthogonal",
  "properties":[
         {

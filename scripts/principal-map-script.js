@@ -5,6 +5,52 @@ import { principalMapDialogs } from './constants/maps-dialogs.js'
 import { oldManName, ladyOfTheLakeName, myselfName} from './constants/character-names.js';
 import { principalMapAnimationLayers } from './constants/maps-animation-layers.js'
 
+const getRandomPlayersListArray = () => {
+    console.log('LISTE', WA.state['randomPlayersList'])
+    return JSON.parse(WA.state['randomPlayersList'])
+}
+
+const setRandomPlayerListArray = (array) => {
+    WA.state['randomPlayersList'] = JSON.stringify(array)
+}
+
+// Fonction de plouf plouf
+const ploufPlouf = (roomId) => {
+    WA.state['selectRandomPlayer'] = roomId
+    WA.chat.sendChatMessage(WA.state['selectRandomPlayer'], 'TEST ROOM')
+    setRandomPlayerListArray([])
+    WA.chat.sendChatMessage(WA.state['randomPlayersList'], 'TEST LISTE')
+    setTimeout(() => {
+        WA.state['selectRandomPlayer'] = null
+        const randomPlayersList = getRandomPlayersListArray()
+        const random = Math.floor(Math.random() * randomPlayersList.length)
+        WA.chat.sendChatMessage('Tiré au sort : ' + randomPlayersList[random], 'Licrone cosmique')
+        setRandomPlayerListArray([])
+    }, 1000)
+}
+
+
+
+// Ecouter le plouf plouf
+WA.state.onVariableChange('selectRandomPlayer').subscribe((value) => {
+    console.log('ROOM ID', value, WA.room.id, value === WA.room.id)
+    if (value === WA.room.id) {
+        const randomPlayersList = getRandomPlayersListArray()
+        randomPlayersList.push(WA.player.name)
+        setRandomPlayerListArray(randomPlayersList)
+        console.log('NEW LIST', WA.state['randomPlayersList'])
+    }
+})
+
+// TODO : DELETE AND CALL FROM BUTTON
+WA.chat.onChatMessage((message) => {
+    if (message.trim().toLowerCase() === "plouf") {
+        WA.state['selectRandomPlayer'] = WA.room.id
+        WA.chat.sendChatMessage('PLOUF PLOUF', 'Licorne cosmique');
+        ploufPlouf()
+    }
+})
+
 
 // Old man
 let oldManCounter = 0
