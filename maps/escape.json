@@ -108,7 +108,7 @@
         {
          "columns":16,
          "firstgid":1,
-         "image":"..\/downloaded_tilesets\/[GOOD]Ti_exterior(22).png",
+         "image":"images\/[GOOD]Ti_exterior(22).png",
          "imageheight":512,
          "imagewidth":512,
          "margin":0,
@@ -121,7 +121,7 @@
         {
          "columns":16,
          "firstgid":257,
-         "image":"..\/Ti_exterior(20).png",
+         "image":"images\/Ti_exterior(20).png",
          "imageheight":512,
          "imagewidth":512,
          "margin":0,
@@ -134,7 +134,7 @@
         {
          "columns":8,
          "firstgid":513,
-         "image":"..\/src\/assets\/Pipoya RPG Tileset 32x32\/[Base]BaseChip_pipo.png",
+         "image":"images\/[Base]BaseChip_pipo.png",
          "imageheight":4256,
          "imagewidth":256,
          "margin":0,
@@ -147,7 +147,7 @@
         {
          "columns":6,
          "firstgid":1577,
-         "image":"..\/src\/assets\/Special_Zones.png",
+         "image":"images\/Special_Zones.png",
          "imageheight":64,
          "imagewidth":192,
          "margin":0,
