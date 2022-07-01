@@ -35,7 +35,6 @@ const ploufPlouf = (dialog) => {
     WA.state['selectRandomPlayer'] = true
     setTimeout(() => {
         randomPlayersList.push(WA.player.name)
-        console.log('LOUF LOUF LISTE', randomPlayersList)
         WA.state['selectRandomPlayer'] = false
         const random = Math.floor(Math.random() * randomPlayersList.length)
         sendMessageToAllPlayers(getSentenceWithVariables(
@@ -46,7 +45,7 @@ const ploufPlouf = (dialog) => {
         WA.state['addNameToRandomPlayerList'] = ''
         waitingForPloufPlouf = false
         randomPlayersList = []
-    }, 5000)
+    }, 3000)
 }
 
 
@@ -60,7 +59,6 @@ WA.state.onVariableChange('selectRandomPlayer').subscribe((value) => {
 // Ajouter des joueurs à la variable locale randomPlayersList
 WA.state.onVariableChange('addNameToRandomPlayerList').subscribe((value) => {
     if (waitingForPloufPlouf && value !== '') {
-        WA.chat.sendChatMessage('received' + value, 'author')
         randomPlayersList.push(value)
     }
 })
