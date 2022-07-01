@@ -1,12 +1,11 @@
 import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
-import { toggleLayersVisibility, triggerAnimationWithLayers } from './utils.js'
+import { toggleLayersVisibility, triggerAnimationWithLayers, getSentenceWithVariables } from './utils.js'
 import { principalMapLayers } from './constants/maps-layers.js'
 import { principalMapDialogs } from './constants/maps-dialogs.js'
-import { oldManName, ladyOfTheLakeName, myselfName} from './constants/character-names.js';
+import { oldManName, ladyOfTheLakeName, myselfName, omnipotentCharacter} from './constants/character-names.js';
 import { principalMapAnimationLayers } from './constants/maps-animation-layers.js'
 
 const getRandomPlayersListArray = () => {
-    console.log('LISTE', WA.state['randomPlayersList'])
     return JSON.parse(WA.state['randomPlayersList'])
 }
 
@@ -15,16 +14,19 @@ const setRandomPlayerListArray = (array) => {
 }
 
 // Fonction de plouf plouf
-const ploufPlouf = (roomId) => {
-    WA.state['selectRandomPlayer'] = roomId
-    WA.chat.sendChatMessage(WA.state['selectRandomPlayer'], 'TEST ROOM')
+const ploufPlouf = (dialog) => {
+    WA.chat.sendChatMessage(principalMapDialogs.ploufPlouf[dialog].sentence, omnipotentCharacter);
+    WA.state['selectRandomPlayer'] = WA.room.id
     setRandomPlayerListArray([])
-    WA.chat.sendChatMessage(WA.state['randomPlayersList'], 'TEST LISTE')
     setTimeout(() => {
         WA.state['selectRandomPlayer'] = null
         const randomPlayersList = getRandomPlayersListArray()
         const random = Math.floor(Math.random() * randomPlayersList.length)
-        WA.chat.sendChatMessage('Tiré au sort : ' + randomPlayersList[random], 'Licrone cosmique')
+        WA.chat.sendChatMessage(getSentenceWithVariables(
+            principalMapDialogs.ploufPlouf[dialog].selected,
+            {
+            name: randomPlayersList[random]
+        }), omnipotentCharacter)
         setRandomPlayerListArray([])
     }, 1000)
 }
@@ -33,22 +35,53 @@ const ploufPlouf = (roomId) => {
 
 // Ecouter le plouf plouf
 WA.state.onVariableChange('selectRandomPlayer').subscribe((value) => {
-    console.log('ROOM ID', value, WA.room.id, value === WA.room.id)
     if (value === WA.room.id) {
         const randomPlayersList = getRandomPlayersListArray()
         randomPlayersList.push(WA.player.name)
         setRandomPlayerListArray(randomPlayersList)
-        console.log('NEW LIST', WA.state['randomPlayersList'])
     }
 })
 
-// TODO : DELETE AND CALL FROM BUTTON
-WA.chat.onChatMessage((message) => {
-    if (message.trim().toLowerCase() === "plouf") {
-        WA.state['selectRandomPlayer'] = WA.room.id
-        WA.chat.sendChatMessage('PLOUF PLOUF', 'Licorne cosmique');
-        ploufPlouf()
-    }
+let triggerBoatPloufPloufMessage
+let triggerPotatoPloufPloufMessage
+let triggerMoneyPloufPloufMessage
+WA.room.onEnterLayer('zonesPloufPlouf/ploufPloufBoat').subscribe(() => {
+    triggerBoatPloufPloufMessage = WA.ui.displayActionMessage({
+        message: "[ESPACE] " + principalMapDialogs.ploufPlouf.boat.action,
+        callback: () => {
+            ploufPlouf('boat')
+        }
+    })
+})
+
+WA.room.onEnterLayer('zonesPloufPlouf/ploufPloufPotato').subscribe(() => {
+    triggerPotatoPloufPloufMessage = WA.ui.displayActionMessage({
+        message: "[ESPACE] " + principalMapDialogs.ploufPlouf.potato.action,
+        callback: () => {
+            ploufPlouf('potato')
+        }
+    })
+})
+
+WA.room.onEnterLayer('zonesPloufPlouf/ploufPloufMoney').subscribe(() => {
+    triggerMoneyPloufPloufMessage = WA.ui.displayActionMessage({
+        message: "[ESPACE] " + principalMapDialogs.ploufPlouf.money.action,
+        callback: () => {
+            ploufPlouf('money')
+        }
+    })
+})
+
+WA.room.onLeaveLayer('zonesPloufPlouf/ploufPloufBoat').subscribe(() => {
+    triggerBoatPloufPloufMessage.remove()
+})
+
+WA.room.onLeaveLayer('zonesPloufPlouf/ploufPloufMoney').subscribe(() => {
+    triggerMoneyPloufPloufMessage.remove()
+})
+
+WA.room.onLeaveLayer('zonesPloufPlouf/ploufPloufPotato').subscribe(() => {
+    triggerPotatoPloufPloufMessage.remove()
 })
 
 

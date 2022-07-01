@@ -35,7 +35,18 @@ const triggerAnimationWithLayers = async (layers, time=300) => {
     toggleLayersVisibility(layers[layers.length-1], false)
 }
 
+const getSentenceWithVariables = (message, variables = {}) => {
+    let newMessage = message
+    const variablesKeys = Object.keys(variables)
+    for (let i = 0; i < variablesKeys.length; i++) {
+        newMessage = newMessage.replaceAll('{' + variablesKeys[i] + '}', variables[variablesKeys[i]])
+    }
+
+    return newMessage
+}
+
 export {
     toggleLayersVisibility,
-    triggerAnimationWithLayers
+    triggerAnimationWithLayers,
+    getSentenceWithVariables
 }

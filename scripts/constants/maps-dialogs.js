@@ -4,7 +4,24 @@ const principalMapDialogs = {
         "On reconnaît bien l'influence expressioniste du sculpteur...",
         "Une critique des dérives du capitalisme sans doute.",
         "Le modèle me rappelle quelque chose"
-    ]
+    ],
+    ploufPlouf: {
+        boat: {
+            action: 'Désigner un matelot pour passer sur la planche',
+            sentence: 'Yoho Bande de marins d\'eau douce ! Il y a trop de poids sur ce rafiot, l\'un(e) d\'entre vous passera sur la planche !',
+            selected: '{name} va faire un plongeon !'
+        },
+        money: {
+            action: 'Qui va payer sa tournée ?',
+            sentence: 'Tiens donc, il semblerait que quelqu\'un soit d\'humeur généreuse aujourd\'hui !',
+            selected: '{name} paie sa tournée !'
+        },
+        potato: {
+            action: 'Désigner un volontaire',
+            sentence: 'Quelle chance !',
+            selected: '{name} est de corvée de patates'
+        }
+    }
 }
 
 const graalMapDialogs = {
