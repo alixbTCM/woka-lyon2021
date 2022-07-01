@@ -981,8 +981,8 @@
                  "properties":[
                         {
                          "name":"default",
-                         "type":"string",
-                         "value":""
+                         "type":"bool",
+                         "value":false
                         }],
                  "rotation":0,
                  "type":"variable",
@@ -1008,6 +1008,78 @@
                  "width":0,
                  "x":487.903770779835,
                  "y":650.08784970942
+                }, 
+                {
+                 "height":0,
+                 "id":32,
+                 "name":"receiveChatMessage",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"default",
+                         "type":"bool",
+                         "value":false
+                        }],
+                 "rotation":0,
+                 "type":"variable",
+                 "visible":true,
+                 "width":0,
+                 "x":147.617039223956,
+                 "y":510.333192745677
+                }, 
+                {
+                 "height":0,
+                 "id":33,
+                 "name":"chatMessageContent",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"default",
+                         "type":"string",
+                         "value":""
+                        }],
+                 "rotation":0,
+                 "type":"variable",
+                 "visible":true,
+                 "width":0,
+                 "x":198.228595529313,
+                 "y":508.22437789962
+                }, 
+                {
+                 "height":0,
+                 "id":34,
+                 "name":"chatMessageAuthor",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"default",
+                         "type":"string",
+                         "value":""
+                        }],
+                 "rotation":0,
+                 "type":"variable",
+                 "visible":true,
+                 "width":0,
+                 "x":247.785744411641,
+                 "y":509.278785322649
+                }, 
+                {
+                 "height":0,
+                 "id":35,
+                 "name":"addNameToRandomPlayerList",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"default",
+                         "type":"string",
+                         "value":""
+                        }],
+                 "rotation":0,
+                 "type":"variable",
+                 "visible":true,
+                 "width":0,
+                 "x":452.340784479123,
+                 "y":672.711935892029
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1060,7 +1132,7 @@
          "y":0
         }],
  "nextlayerid":82,
- "nextobjectid":32,
+ "nextobjectid":37,
  "orientation":"orthogonal",
  "properties":[
         {

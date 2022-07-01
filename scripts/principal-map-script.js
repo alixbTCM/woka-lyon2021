@@ -5,40 +5,63 @@ import { principalMapDialogs } from './constants/maps-dialogs.js'
 import { oldManName, ladyOfTheLakeName, myselfName, omnipotentCharacter} from './constants/character-names.js';
 import { principalMapAnimationLayers } from './constants/maps-animation-layers.js'
 
-const getRandomPlayersListArray = () => {
-    return JSON.parse(WA.state['randomPlayersList'])
+// TODO : Mettre tous les dialogues dans les variables
+
+WA.state['receiveChatMessage'] = false
+const sendMessageToAllPlayers = (message, author) => {
+    WA.state['chatMessageContent'] = message
+    WA.state['chatMessageAuthor'] = author
+    WA.state['receiveChatMessage'] = true
+
+    setTimeout(() => {
+        WA.state['receiveChatMessage'] = false
+    }, 100)
 }
 
-const setRandomPlayerListArray = (array) => {
-    WA.state['randomPlayersList'] = JSON.stringify(array)
-}
+// Ecouter le nouveau message
+WA.state.onVariableChange('receiveChatMessage').subscribe((value) => {
+    if (value) {
+        WA.chat.sendChatMessage(WA.state['chatMessageContent'], WA.state['chatMessageAuthor'])
+    }
+})
 
+let randomPlayersList = []
+let waitingForPloufPlouf = false
 // Fonction de plouf plouf
 const ploufPlouf = (dialog) => {
-    WA.chat.sendChatMessage(principalMapDialogs.ploufPlouf[dialog].sentence, omnipotentCharacter);
-    WA.state['selectRandomPlayer'] = WA.room.id
-    setRandomPlayerListArray([])
+    randomPlayersList = [] // Reset players list
+    waitingForPloufPlouf = true
+    sendMessageToAllPlayers(principalMapDialogs.ploufPlouf[dialog].sentence, omnipotentCharacter);
+    WA.state['selectRandomPlayer'] = true
     setTimeout(() => {
-        WA.state['selectRandomPlayer'] = null
-        const randomPlayersList = getRandomPlayersListArray()
+        randomPlayersList.push(WA.player.name)
+        console.log('LOUF LOUF LISTE', randomPlayersList)
+        WA.state['selectRandomPlayer'] = false
         const random = Math.floor(Math.random() * randomPlayersList.length)
-        WA.chat.sendChatMessage(getSentenceWithVariables(
+        sendMessageToAllPlayers(getSentenceWithVariables(
             principalMapDialogs.ploufPlouf[dialog].selected,
             {
             name: randomPlayersList[random]
         }), omnipotentCharacter)
-        setRandomPlayerListArray([])
-    }, 1000)
+        WA.state['addNameToRandomPlayerList'] = ''
+        waitingForPloufPlouf = false
+        randomPlayersList = []
+    }, 5000)
 }
-
 
 
 // Ecouter le plouf plouf
 WA.state.onVariableChange('selectRandomPlayer').subscribe((value) => {
-    if (value === WA.room.id) {
-        const randomPlayersList = getRandomPlayersListArray()
-        randomPlayersList.push(WA.player.name)
-        setRandomPlayerListArray(randomPlayersList)
+    if (value && !waitingForPloufPlouf) {
+        WA.state['addNameToRandomPlayerList'] = WA.player.name
+    }
+})
+
+// Ajouter des joueurs à la variable locale randomPlayersList
+WA.state.onVariableChange('addNameToRandomPlayerList').subscribe((value) => {
+    if (waitingForPloufPlouf && value !== '') {
+        WA.chat.sendChatMessage('received' + value, 'author')
+        randomPlayersList.push(value)
     }
 })
 
