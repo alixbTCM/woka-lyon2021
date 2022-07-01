@@ -45,8 +45,21 @@ const getSentenceWithVariables = (message, variables = {}) => {
     return newMessage
 }
 
+const monologue = (messages, author, variables = {}) => {
+    for (let i = 0; i<messages.length; i++) {
+        WA.chat.sendChatMessage(getSentenceWithVariables(messages[i], variables), author)
+    }
+}
+
+const selectRandomItemInArray = (array) => {
+    const random = Math.floor(Math.random() * array.length)
+    return array[random]
+}
+
 export {
     toggleLayersVisibility,
     triggerAnimationWithLayers,
-    getSentenceWithVariables
+    getSentenceWithVariables,
+    monologue,
+    selectRandomItemInArray
 }

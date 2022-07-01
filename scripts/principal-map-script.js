@@ -1,9 +1,16 @@
 import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
-import { toggleLayersVisibility, triggerAnimationWithLayers, getSentenceWithVariables } from './utils.js'
+import {
+    toggleLayersVisibility,
+    triggerAnimationWithLayers,
+    getSentenceWithVariables,
+    monologue,
+    selectRandomItemInArray
+} from './utils.js'
 import { principalMapLayers } from './constants/maps-layers.js'
-import { principalMapDialogs } from './constants/maps-dialogs.js'
+import { principalMapDialogs, dialogUtils } from './constants/maps-dialogs.js'
 import { oldManName, ladyOfTheLakeName, myselfName, omnipotentCharacter} from './constants/character-names.js';
 import { principalMapAnimationLayers } from './constants/maps-animation-layers.js'
+import { principalMapChatCommands } from './constants/chat-commands.js'
 
 // TODO : Mettre tous les dialogues dans les variables
 
@@ -36,11 +43,10 @@ const ploufPlouf = (dialog) => {
     setTimeout(() => {
         randomPlayersList.push(WA.player.name)
         WA.state['selectRandomPlayer'] = false
-        const random = Math.floor(Math.random() * randomPlayersList.length)
         sendMessageToAllPlayers(getSentenceWithVariables(
             principalMapDialogs.ploufPlouf[dialog].selected,
             {
-            name: randomPlayersList[random]
+            name: selectRandomItemInArray(randomPlayersList)
         }), omnipotentCharacter)
         WA.state['addNameToRandomPlayerList'] = ''
         waitingForPloufPlouf = false
@@ -68,7 +74,9 @@ let triggerPotatoPloufPloufMessage
 let triggerMoneyPloufPloufMessage
 WA.room.onEnterLayer('zonesPloufPlouf/ploufPloufBoat').subscribe(() => {
     triggerBoatPloufPloufMessage = WA.ui.displayActionMessage({
-        message: "[ESPACE] " + principalMapDialogs.ploufPlouf.boat.action,
+        message: getSentenceWithVariables(dialogUtils.executeAction, {
+            action: principalMapDialogs.ploufPlouf.boat.action
+        }),
         callback: () => {
             ploufPlouf('boat')
         }
@@ -77,7 +85,9 @@ WA.room.onEnterLayer('zonesPloufPlouf/ploufPloufBoat').subscribe(() => {
 
 WA.room.onEnterLayer('zonesPloufPlouf/ploufPloufPotato').subscribe(() => {
     triggerPotatoPloufPloufMessage = WA.ui.displayActionMessage({
-        message: "[ESPACE] " + principalMapDialogs.ploufPlouf.potato.action,
+        message: getSentenceWithVariables(dialogUtils.executeAction, {
+            action: principalMapDialogs.ploufPlouf.potato.action
+        }),
         callback: () => {
             ploufPlouf('potato')
         }
@@ -86,7 +96,9 @@ WA.room.onEnterLayer('zonesPloufPlouf/ploufPloufPotato').subscribe(() => {
 
 WA.room.onEnterLayer('zonesPloufPlouf/ploufPloufMoney').subscribe(() => {
     triggerMoneyPloufPloufMessage = WA.ui.displayActionMessage({
-        message: "[ESPACE] " + principalMapDialogs.ploufPlouf.money.action,
+        message: getSentenceWithVariables(dialogUtils.executeAction, {
+            action: principalMapDialogs.ploufPlouf.money.action
+        }),
         callback: () => {
             ploufPlouf('money')
         }
@@ -111,27 +123,29 @@ let oldManCounter = 0
 let triggerOldManMessage;
 WA.room.onEnterLayer('OldManZone').subscribe(() => {
     triggerOldManMessage = WA.ui.displayActionMessage({
-        message: WA.state['showOldMan'] ? "[ESPACE] Parler au vieux sage" : "[ESPACE] Admirer la statue",
+        message: WA.state['showOldMan'] ? getSentenceWithVariables(dialogUtils.executeAction, {
+            action: principalMapDialogs.oldMan.actions.ghost
+        }) : getSentenceWithVariables(dialogUtils.executeAction, {
+            action: principalMapDialogs.oldMan.actions.stone
+        }),
         callback: () => {
             if (WA.state['showOldMan'] ) {
                 oldManCounter++
                 if (oldManCounter === 1) {
-                    WA.chat.sendChatMessage('Luuuuuuke, tu dois restaurer l\'équilibre dans la force !', oldManName)
-                    WA.chat.sendChatMessage('Euh non, je me trompe...', oldManName)
-                    WA.chat.sendChatMessage('*tousse* *tousse*', oldManName)
-                    WA.chat.sendChatMessage('Holà Aventurier ! Alors comme ça tu veux te rendre au royaume d\'Avalon ?', oldManName)
-                    WA.chat.sendChatMessage('Une vieille légende raconte que le roi Arthur y aurait été envoyé après avoir sauté au milieu d\' un banc de requins !', oldManName)
-                    WA.chat.sendChatMessage('Comment ?! Tu as peur des requins ?!? Du nerf, Aventurier ! Tiens, bois cette potion, elle te donnera du courage. Et maintenant OUSTE ! Js suis occupé.', oldManName)
-                    WA.chat.sendChatMessage('Bonne chance, Aventurier !', oldManName)
-
+                    monologue(principalMapDialogs.oldMan.firstTalk, oldManName)
                     WA.room.setTiles([{x: 27, y: 22, tile: null, layer: 'BlockingSharks'}])
                 } else {
-                    WA.chat.sendChatMessage(`Ah, ${WA.player.name} ! Y-a-t\'il eu de l\'avancement dans ta quête ?`, oldManName)
+                    WA.chat.sendChatMessage(
+                        getSentenceWithVariables(
+                            principalMapDialogs.oldMan.secondTalk,
+                            {name: WA.player.name}
+                        ),
+                        oldManName
+                    )
                 }
             }
             else {
-                const random = Math.floor(Math.random() * principalMapDialogs.oldManStoneAdmirations.length)
-                WA.chat.sendChatMessage(principalMapDialogs.oldManStoneAdmirations[random], myselfName)
+                WA.chat.sendChatMessage(selectRandomItemInArray(principalMapDialogs.oldMan.admirations), myselfName)
             }
         }
     });
@@ -143,16 +157,15 @@ WA.room.onLeaveLayer('OldManZone').subscribe(() => {
 
 // Listening chat message
 WA.chat.onChatMessage((message) => {
-    if (message.trim().toLowerCase() === "avalon" && !WA.state['showOldMan']) {
+    if (message.trim().toLowerCase() === principalMapChatCommands.avalonUnlockingCommand && !WA.state['showOldMan']) {
         WA.state['showOldMan'] = true
-        WA.chat.sendChatMessage('Je viens d\'appeler le gardien d\'Avalon', myselfName);
     }
 })
 
 WA.state.onVariableChange('showOldMan').subscribe((value) => {
     if (value) {
         toggleLayersVisibility("OldManStone", false)
-        WA.chat.sendChatMessage('Le vieux sage a été appelé, quelqu\'un semble vouloir se rendre à Avalon !', ladyOfTheLakeName);
+        WA.chat.sendChatMessage(principalMapDialogs.oldMan.appearing, ladyOfTheLakeName);
 
         triggerAnimationWithLayers(principalMapAnimationLayers.pouf)
     }
@@ -163,7 +176,9 @@ WA.state.onVariableChange('showOldMan').subscribe((value) => {
 let triggerCanonAction
 WA.room.onEnterLayer('Canon1Zone').subscribe(() => {
     triggerCanonAction = WA.ui.displayActionMessage({
-        message: "[ESPACE] Tirer",
+        message: getSentenceWithVariables(dialogUtils.executeAction, {
+            action: dialogUtils.shoot
+        }),
         callback: () => {
             WA.state['shootingCanon1'] = true
 
@@ -179,7 +194,9 @@ WA.room.onLeaveLayer('Canon1Zone').subscribe(() => {
 
 WA.room.onEnterLayer('Canon2Zone').subscribe(() => {
     triggerCanonAction = WA.ui.displayActionMessage({
-        message: "[ESPACE] Tirer",
+        message: getSentenceWithVariables(dialogUtils.executeAction, {
+            action: dialogUtils.shoot
+        }),
         callback: () => {
             WA.state['shootingCanon2'] = true
 
@@ -264,23 +281,14 @@ WA.room.onLeaveLayer("cavernZone").subscribe(() => {
 // Lady of the lake
 WA.room.onEnterLayer("ladyOfTheLakeZone").subscribe(() => {
     if (LadyCounter === 0) {
-        WA.chat.sendChatMessage("Halte-là !", ladyOfTheLakeName)
-        WA.chat.sendChatMessage("Vous n'êtes pas dignes d'un tel honneur !", ladyOfTheLakeName)
-        WA.chat.sendChatMessage("Seul les preux chevaliers ayant bravé les dangers d'Avalon peuvent prétendre devenir rois en retirant l'épée !", ladyOfTheLakeName)
+        monologue(principalMapDialogs.ladyOfTheLake.firstTalk, ladyOfTheLakeName)
+    } else {
+        WA.chat.sendChatMessage(
+            getSentenceWithVariables(
+                selectRandomItemInArray(principalMapDialogs.ladyOfTheLake.randomSentence), {name: WA.player.name}
+            ), ladyOfTheLakeName
+        )
     }
-
-    if (LadyCounter === 1) {
-        WA.chat.sendChatMessage("VOUS ne passerez PAS !", ladyOfTheLakeName)
-    }
-
-    if (LadyCounter === 2) {
-        WA.chat.sendChatMessage("Je t'ai dit d'aller à AVALON !", ladyOfTheLakeName)
-    }
-
-    if (LadyCounter > 2) {
-        WA.chat.sendChatMessage("Tu ne vas jamais me laisser tranquille en fait ? ...", ladyOfTheLakeName)
-    }
-
     toggleLayersVisibility(principalMapLayers.ladyOfTheLake)
     LadyCounter ++
 })
