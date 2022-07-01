@@ -12,8 +12,6 @@ import { oldManName, ladyOfTheLakeName, myselfName, omnipotentCharacter} from '.
 import { principalMapAnimationLayers } from './constants/maps-animation-layers.js'
 import { principalMapChatCommands } from './constants/chat-commands.js'
 
-// TODO : Mettre tous les dialogues dans les variables
-
 WA.state['receiveChatMessage'] = false
 const sendMessageToAllPlayers = (message, author) => {
     WA.state['chatMessageContent'] = message
