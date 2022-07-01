@@ -226,39 +226,7 @@ WA.state.onVariableChange('shootingCanon1').subscribe((value) => {
     }
 })
 
-// TODO : BUG when user leave from a room :/
-/*// Save number of people in meetings
-for(let i = 0; i<meetings.length; i++) {
-    WA.room.onEnterLayer(meetings[i]).subscribe(() => {
-        let nbPeople = WA.state[meetings[i] + '-nb-people']
-        nbPeople = !nbPeople ? 1 : nbPeople + 1
-        WA.state[meetings[i] + '-nb-people'] = nbPeople
-        console.log('VARIABLE', meetings[i] + '-nb-people', WA.state[meetings[i] + '-nb-people'])
-        WA.chat.sendChatMessage(WA.state[meetings[i] + '-nb-people'], "ENTERED")
-    });
-
-    WA.room.onLeaveLayer(meetings[i]).subscribe(() => {
-        let nbPeople = WA.state[meetings[i] + '-nb-people']
-        nbPeople = !nbPeople ? 0 : nbPeople - 1
-        WA.state[meetings[i] + '-nb-people'] = nbPeople
-        WA.chat.sendChatMessage(WA.state[meetings[i] + '-nb-people'], "LEFT")
-    });
-}
-
-// Show number of people
-WA.room.onEnterLayer('DisplayPannelZone').subscribe(() => {
-    const triggerMessage = WA.ui.displayActionMessage({
-        message: "Appuyez sur 'Espace' pour voir le tableau d'affichage'",
-        callback: () => {
-            for(let i = 0; i<meetings.length; i++) {
-                WA.chat.sendChatMessage('Nombre de personnes dans ' + meetings[i] + ' : ' + WA.state[meetings[i] + '-nb-people'], "Panneau d'affichage")
-            }
-        }
-    });
-})*/
-
 let LadyCounter = 0;
-
 
 // Rabbit Hole zone
 WA.room.onEnterLayer("rabbitHoleZone").subscribe(() => {
