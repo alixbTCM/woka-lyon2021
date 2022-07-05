@@ -1,4 +1,3 @@
-
 const wait = (time) => {
     return new Promise(resolve => {
         setTimeout(resolve, time);
@@ -35,7 +34,14 @@ const triggerAnimationWithLayers = async (layers, time=300) => {
     toggleLayersVisibility(layers[layers.length-1], false)
 }
 
+const writeMultiLinesText = (array, author) => {
+    for (let i = 0; i < array.length; i++) {
+        WA.chat.sendChatMessage(array[i], author)
+    }
+}
+
 export {
     toggleLayersVisibility,
-    triggerAnimationWithLayers
+    triggerAnimationWithLayers,
+    writeMultiLinesText
 }
