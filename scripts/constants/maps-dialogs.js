@@ -1,10 +1,65 @@
 const principalMapDialogs = {
-    oldManStoneAdmirations:  [ // Phrases admiratives pour la statue du vieux sage
-        "Quelle jolie statue !",
-        "On reconnaît bien l'influence expressioniste du sculpteur...",
-        "Une critique des dérives du capitalisme sans doute.",
-        "Le modèle me rappelle quelque chose"
-    ]
+    oldMan: {
+        actions: {
+            stone: 'Admirer la statue',
+            ghost: 'Parler au vieux sage'
+        },
+        appearing: 'Le vieux sage a été appelé, quelqu\'un semble vouloir se rendre à Avalon',
+        admirations: [ // Phrases admiratives pour la statue du vieux sage
+            "Quelle jolie statue !",
+            "On reconnaît bien l'influence expressioniste du sculpteur...",
+            "Une critique des dérives du capitalisme sans doute.",
+            "Le modèle me rappelle quelque chose..."
+        ],
+        firstTalk: [
+            'Luuuuuuke, tu dois restaurer l\'équilibre dans la force !',
+            'Euh non, je me trompe...',
+            '*tousse* *tousse*',
+            'Holà Aventurier ! Alors comme ça tu veux te rendre au royaume d\'Avalon ?',
+            'Une vieille légende raconte que le roi Arthur y aurait été envoyé après avoir sauté au milieu d\' un banc de requins !',
+            'Comment ?! Tu as peur des requins ?!? Du nerf, Aventurier ! Tiens, bois cette potion, elle te donnera du courage. Et maintenant OUSTE ! Je suis occupé.',
+            'Bonne chance, Aventurier !'
+        ],
+        secondTalk: 'Ah, {name} ! Y-a-t\'il eu de l\'avancement dans ta quête ?'
+    },
+    ladyOfTheLake: {
+        firstTalk: [
+            'Halte-là !',
+            'Vous n\'êtes pas dignes d\'un tel honneur !',
+            'Seul les preux chevaliers ayant bravé les dangers d\'Avalon peuvent prétendre devenir rois en retirant l\'épée !'
+        ],
+        randomSentence: [
+            'VOUS ne passerez PAS',
+            'Tu ne pourras pas tenter ta chance pour retirer Excalibur du rocher tant que tu n\'as pas réussi les épreuves. N\'oublies pas {name} : "Avalon" est la clé.',
+            'Va parler au vieux sage, il saura te guider ! "Avalon" est la clé.',
+            'Je ne peux rien pour toi. Trouves "Avalon".'
+        ]
+    },
+    ploufPlouf: {
+        boat: {
+            action: 'Désigner un matelot pour passer sur la planche',
+            sentence: 'Yoho Bande de marins d\'eau douce ! Il y a trop de poids sur ce rafiot, l\'un(e) d\'entre vous passera sur la planche !',
+            selected: '{name} va faire un plongeon !'
+        },
+        money: {
+            action: 'Qui va payer sa tournée ?',
+            sentence: 'Tiens donc, il semblerait que quelqu\'un soit d\'humeur généreuse aujourd\'hui !',
+            selected: '{name} paie sa tournée !'
+        },
+        potato: {
+            action: 'Désigner un volontaire',
+            sentence: 'Quelle chance !',
+            selected: '{name} est de corvée de patates'
+        },
+        global: {
+            sentence: "Quelqu'un va être tiré au sort !",
+            selected: "{name} a été sélectionné"
+        }
+    },
+    getPlayersInRooms: {
+        impossible: "Impossible pour le moment, une autre personne fait la même recherche",
+        room: "Nombre de personne dans la salle {room} : {nombre}"
+    }
 }
 
 const graalMapDialogs = {
@@ -206,7 +261,14 @@ const graalMapDialogs = {
     }
 }
 
+const dialogUtils = {
+    executeAction: '[Espace] {action}',
+    shoot: 'Tirer',
+    see: 'Consulter'
+}
+
 export {
     principalMapDialogs,
-    graalMapDialogs
+    graalMapDialogs,
+    dialogUtils
 }

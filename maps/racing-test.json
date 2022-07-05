@@ -149,7 +149,7 @@
         {
          "columns":12,
          "firstgid":1,
-         "image":"..\/src\/assets\/addwork.png",
+         "image":"images\/addwork.png",
          "imageheight":2048,
          "imagewidth":384,
          "margin":0,
@@ -162,7 +162,7 @@
         {
          "columns":24,
          "firstgid":769,
-         "image":"..\/src\/assets\/SciFi_Warehouse_A3.png",
+         "image":"images\/SciFi_Warehouse_A3.png",
          "imageheight":384,
          "imagewidth":768,
          "margin":0,
@@ -175,7 +175,7 @@
         {
          "columns":6,
          "firstgid":1057,
-         "image":"..\/src\/assets\/Special_Zones.png",
+         "image":"images\/Special_Zones.png",
          "imageheight":64,
          "imagewidth":192,
          "margin":0,
@@ -198,7 +198,7 @@
         {
          "columns":5,
          "firstgid":1069,
-         "image":"..\/src\/assets\/racingstart.png",
+         "image":"images\/racingstart.png",
          "imageheight":32,
          "imagewidth":160,
          "margin":0,
@@ -211,7 +211,7 @@
         {
          "columns":16,
          "firstgid":1074,
-         "image":"..\/src\/assets\/Ruin-F.png",
+         "image":"images\/Ruin-F.png",
          "imageheight":512,
          "imagewidth":512,
          "margin":0,
@@ -224,7 +224,7 @@
         {
          "columns":8,
          "firstgid":1330,
-         "image":"..\/src\/assets\/wedding.png",
+         "image":"images\/wedding.png",
          "imageheight":1248,
          "imagewidth":256,
          "margin":0,
@@ -237,7 +237,7 @@
         {
          "columns":8,
          "firstgid":1642,
-         "image":"..\/src\/assets\/Pipoya RPG Tileset 32x32\/[Base]BaseChip_pipo.png",
+         "image":"images\/[Base]BaseChip_pipo.png",
          "imageheight":4256,
          "imagewidth":256,
          "margin":0,

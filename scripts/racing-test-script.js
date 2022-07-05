@@ -1,7 +1,7 @@
 import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 import {racingTestRuleName, waterTestRuleName} from './constants/character-names.js';
 import {racingTestRules, waterTestRules} from './constants/maps-game-rules.js';
-import {writeMultiLinesText} from "./utils.js";
+import {monologue} from "./utils.js";
 
 WA.room.onEnterLayer('startRacing').subscribe( async()=> {
     const startTime = new Date
@@ -42,7 +42,7 @@ WA.room.onEnterLayer('tuto').subscribe(() => {
     triggerTuto = WA.ui.displayActionMessage({
         message: "[ESPACE] Voir les règles" ,
         callback: () => {
-            writeMultiLinesText(racingTestRules, racingTestRuleName)
+            monologue(racingTestRules, racingTestRuleName)
         }
     });
 })

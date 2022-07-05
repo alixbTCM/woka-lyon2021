@@ -1,7 +1,7 @@
 import { principalMapAnimationLayers } from './constants/maps-animation-layers.js'
 import { waterTestRuleName } from './constants/character-names.js';
 import { waterTestRules } from './constants/maps-game-rules.js';
-import { writeMultiLinesText } from "./utils.js";
+import { monologue } from "./utils.js";
 
 const getTileCoordinate = (playerPosition)=> {
     return {
@@ -14,7 +14,7 @@ WA.room.onEnterLayer('tuto').subscribe(() => {
     triggerTuto = WA.ui.displayActionMessage({
         message: "[ESPACE] Voir les règles" ,
         callback: () => {
-            writeMultiLinesText(waterTestRules, waterTestRuleName)
+            monologue(waterTestRules, waterTestRuleName)
         }
     });
 })
