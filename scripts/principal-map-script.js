@@ -43,9 +43,9 @@ const mapRooms = {
 // Set current room id for players
 const mapRoomsKeys = Object.keys(mapRooms)
 let roomId = null
-for (let i = 0; i < mapRooms.length; i++) {
+for (let i = 0; i < mapRoomsKeys.length; i++) {
     WA.room.onEnterLayer(mapRoomsKeys[i]).subscribe(() => {
-        roomId = mapRooms[i].id
+        roomId = mapRooms[mapRoomsKeys[i]].id
     })
 
     WA.room.onLeaveLayer(mapRoomsKeys[i]).subscribe(() => {
@@ -303,11 +303,56 @@ WA.room.onLeaveLayer("ladyOfTheLakeZone").subscribe(() => {
     toggleLayersVisibility(principalMapLayers.ladyOfTheLake, false)
 })
 
-// TODO : Make this function
+let waitingForPLayersInRoom
+let playersInRooms = []
 const getPlayersInRooms = () => {
-    console.log('COUCOU')
-    WA.chat.sendChatMessage('En cours de développement', 'test')
+    if (WA.state['knowPeopleInRooms']) {
+        WA.chat.sendChatMessage(principalMapDialogs.getPlayersInRooms.impossible, omnipotentCharacter)
+    } else {
+        WA.state['knowPeopleInRooms'] = true
+        waitingForPLayersInRoom = true
+        setTimeout(() => {
+            console.log(roomId)
+            if (roomId !== null) {
+                playersInRooms[roomId] = playersInRooms[roomId] ? playersInRooms[roomId] + 1 : 1
+            }
+            WA.state['knowPeopleInRooms'] = false
+            WA.state['addInRoom'] = ''
+
+            for (let i = 0; i<mapRoomsKeys.length; i++) {
+                const mapRoomIndex = mapRoomsKeys[i]
+                const sentence = getSentenceWithVariables(principalMapDialogs.getPlayersInRooms.room, {
+                    room: mapRooms[mapRoomIndex].name,
+                    nombre: (playersInRooms[mapRooms[mapRoomIndex].id] ? playersInRooms[mapRooms[mapRoomIndex].id] : 0)
+                })
+                WA.chat.sendChatMessage(
+                    sentence,
+                    omnipotentCharacter
+                )
+            }
+
+            waitingForPLayersInRoom = false
+            playersInRooms = []
+        }, 3000)
+    }
 }
+
+// Ecouter le get players in rooms
+WA.state.onVariableChange('knowPeopleInRooms').subscribe((value) => {
+    if (value && !waitingForPLayersInRoom) {
+        if (roomId !== null) {
+            WA.state['addInRoom'] = roomId
+        }
+    }
+})
+
+// Ajouter des players dans playersInRooms
+WA.state.onVariableChange('addInRoom').subscribe((value) => {
+    if (waitingForPLayersInRoom) {
+        playersInRooms[value] = playersInRooms[value] ? playersInRooms[value] + 1 : 1
+    }
+})
+
 
 const unlockAvalon = () => {
     if (!WA.state['showOldMan']) {
@@ -319,7 +364,7 @@ const unlockAvalon = () => {
 const chatCommands = {
     [principalMapChatCommands.randomPlayerInMapCommand]: () => ploufPlouf('global'),
     [principalMapChatCommands.playersInRoomsCommand]: () => getPlayersInRooms(),
-    [principalMapChatCommands.avalonUnlockingCommand]: () => unlockAvalon,
+    [principalMapChatCommands.avalonUnlockingCommand]: () => unlockAvalon(),
 }
 
 // Listening to chat commands
@@ -328,7 +373,7 @@ WA.chat.onChatMessage((message) => {
     const trimmedMessage = message.trim().toLowerCase()
     if (chatCommandsKeys.includes(trimmedMessage)) {
         const index = chatCommandsKeys[chatCommandsKeys.indexOf(trimmedMessage)]
-        const functionToExecute = chatCommands[index]()
+        const functionToExecute = chatCommands[index]
         functionToExecute.call()
     }
 })

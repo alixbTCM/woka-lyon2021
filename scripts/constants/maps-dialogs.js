@@ -55,6 +55,10 @@ const principalMapDialogs = {
             sentence: "Quelqu'un va être tiré au sort !",
             selected: "{name} a été sélectionné"
         }
+    },
+    getPlayersInRooms: {
+        impossible: "Impossible pour le moment, une autre personne fait la même recherche",
+        room: "Nombre de personne dans la salle {room} : {nombre}"
     }
 }
 
