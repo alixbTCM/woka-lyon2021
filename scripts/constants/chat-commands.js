@@ -1,7 +1,9 @@
 const principalMapChatCommands = {
-    avalonUnlockingCommand: "avalon"
+    avalonUnlockingCommand: "avalon",
+    randomPlayerInMapCommand: "ploufplouf",
+    playersInRoomsCommand: "getplayersinrooms"
 }
 
 export{
-    principalMapChatCommands
+    principalMapChatCommands,
 }

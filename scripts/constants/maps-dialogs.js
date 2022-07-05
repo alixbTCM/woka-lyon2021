@@ -50,6 +50,10 @@ const principalMapDialogs = {
             action: 'Désigner un volontaire',
             sentence: 'Quelle chance !',
             selected: '{name} est de corvée de patates'
+        },
+        global: {
+            sentence: "Quelqu'un va être tiré au sort !",
+            selected: "{name} a été sélectionné"
         }
     }
 }

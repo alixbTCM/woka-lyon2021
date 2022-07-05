@@ -993,24 +993,6 @@
                 }, 
                 {
                  "height":0,
-                 "id":31,
-                 "name":"randomPlayersList",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"default",
-                         "type":"string",
-                         "value":""
-                        }],
-                 "rotation":0,
-                 "type":"variable",
-                 "visible":true,
-                 "width":0,
-                 "x":487.903770779835,
-                 "y":650.08784970942
-                }, 
-                {
-                 "height":0,
                  "id":32,
                  "name":"receiveChatMessage",
                  "point":true,
@@ -1080,6 +1062,24 @@
                  "width":0,
                  "x":452.340784479123,
                  "y":672.711935892029
+                }, 
+                {
+                 "height":0,
+                 "id":37,
+                 "name":"roomId",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"default",
+                         "type":"string",
+                         "value":""
+                        }],
+                 "rotation":0,
+                 "type":"variable",
+                 "visible":true,
+                 "width":0,
+                 "x":394.223263075722,
+                 "y":676.814988290398
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1132,7 +1132,7 @@
          "y":0
         }],
  "nextlayerid":82,
- "nextobjectid":37,
+ "nextobjectid":39,
  "orientation":"orthogonal",
  "properties":[
         {

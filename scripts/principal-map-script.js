@@ -12,6 +12,49 @@ import { oldManName, ladyOfTheLakeName, myselfName, omnipotentCharacter} from '.
 import { principalMapAnimationLayers } from './constants/maps-animation-layers.js'
 import { principalMapChatCommands } from './constants/chat-commands.js'
 
+// Set map rooms ids
+const mapRooms = {
+    "caverne": {
+        name: "Caverne",
+        id: "cavern"
+    },
+    "terrier-du-lapin": {
+        name: "Terrier",
+        id: "rabbitHole"
+    },
+    "champ": {
+        name: "Champs",
+        id: "field"
+    },
+    "place": {
+        name: "Place",
+        id: "place"
+    },
+    "quais": {
+        name: "Docks",
+        id:"docks",
+    },
+    "black-pearl": {
+        name: "Black Pearl",
+        id: "blackPearl"
+    }
+}
+
+// Set current room id for players
+const mapRoomsKeys = Object.keys(mapRooms)
+let roomId = null
+for (let i = 0; i < mapRooms.length; i++) {
+    WA.room.onEnterLayer(mapRoomsKeys[i]).subscribe(() => {
+        roomId = mapRooms[i].id
+    })
+
+    WA.room.onLeaveLayer(mapRoomsKeys[i]).subscribe(() => {
+        roomId = null
+    })
+}
+
+
+// Send chat message to all players in map
 WA.state['receiveChatMessage'] = false
 const sendMessageToAllPlayers = (message, author) => {
     WA.state['chatMessageContent'] = message
@@ -33,13 +76,15 @@ WA.state.onVariableChange('receiveChatMessage').subscribe((value) => {
 let randomPlayersList = []
 let waitingForPloufPlouf = false
 // Fonction de plouf plouf
-const ploufPlouf = (dialog) => {
+const ploufPlouf = (dialog, roomId = null) => {
     randomPlayersList = [] // Reset players list
     waitingForPloufPlouf = true
     sendMessageToAllPlayers(principalMapDialogs.ploufPlouf[dialog].sentence, omnipotentCharacter);
+    WA.state['roomId'] = roomId
     WA.state['selectRandomPlayer'] = true
     setTimeout(() => {
         randomPlayersList.push(WA.player.name)
+        WA.state['roomId'] = null
         WA.state['selectRandomPlayer'] = false
         sendMessageToAllPlayers(getSentenceWithVariables(
             principalMapDialogs.ploufPlouf[dialog].selected,
@@ -56,7 +101,9 @@ const ploufPlouf = (dialog) => {
 // Ecouter le plouf plouf
 WA.state.onVariableChange('selectRandomPlayer').subscribe((value) => {
     if (value && !waitingForPloufPlouf) {
-        WA.state['addNameToRandomPlayerList'] = WA.player.name
+        if (WA.state['roomId'] === null || WA.state['roomId'] === roomId) {
+            WA.state['addNameToRandomPlayerList'] = WA.player.name
+        }
     }
 })
 
@@ -76,7 +123,7 @@ WA.room.onEnterLayer('zonesPloufPlouf/ploufPloufBoat').subscribe(() => {
             action: principalMapDialogs.ploufPlouf.boat.action
         }),
         callback: () => {
-            ploufPlouf('boat')
+            ploufPlouf('boat', 'blackPearl')
         }
     })
 })
@@ -87,7 +134,7 @@ WA.room.onEnterLayer('zonesPloufPlouf/ploufPloufPotato').subscribe(() => {
             action: principalMapDialogs.ploufPlouf.potato.action
         }),
         callback: () => {
-            ploufPlouf('potato')
+            ploufPlouf('potato','place')
         }
     })
 })
@@ -98,7 +145,7 @@ WA.room.onEnterLayer('zonesPloufPlouf/ploufPloufMoney').subscribe(() => {
             action: principalMapDialogs.ploufPlouf.money.action
         }),
         callback: () => {
-            ploufPlouf('money')
+            ploufPlouf('money', 'docks')
         }
     })
 })
@@ -151,13 +198,6 @@ WA.room.onEnterLayer('OldManZone').subscribe(() => {
 
 WA.room.onLeaveLayer('OldManZone').subscribe(() => {
     triggerOldManMessage.remove()
-})
-
-// Listening chat message
-WA.chat.onChatMessage((message) => {
-    if (message.trim().toLowerCase() === principalMapChatCommands.avalonUnlockingCommand && !WA.state['showOldMan']) {
-        WA.state['showOldMan'] = true
-    }
 })
 
 WA.state.onVariableChange('showOldMan').subscribe((value) => {
@@ -261,4 +301,34 @@ WA.room.onEnterLayer("ladyOfTheLakeZone").subscribe(() => {
 
 WA.room.onLeaveLayer("ladyOfTheLakeZone").subscribe(() => {
     toggleLayersVisibility(principalMapLayers.ladyOfTheLake, false)
+})
+
+// TODO : Make this function
+const getPlayersInRooms = () => {
+    console.log('COUCOU')
+    WA.chat.sendChatMessage('En cours de développement', 'test')
+}
+
+const unlockAvalon = () => {
+    if (!WA.state['showOldMan']) {
+        WA.state['showOldMan'] = true
+    }
+}
+
+// Commandes du chat
+const chatCommands = {
+    [principalMapChatCommands.randomPlayerInMapCommand]: () => ploufPlouf('global'),
+    [principalMapChatCommands.playersInRoomsCommand]: () => getPlayersInRooms(),
+    [principalMapChatCommands.avalonUnlockingCommand]: () => unlockAvalon,
+}
+
+// Listening to chat commands
+const chatCommandsKeys = Object.keys(chatCommands)
+WA.chat.onChatMessage((message) => {
+    const trimmedMessage = message.trim().toLowerCase()
+    if (chatCommandsKeys.includes(trimmedMessage)) {
+        const index = chatCommandsKeys[chatCommandsKeys.indexOf(trimmedMessage)]
+        const functionToExecute = chatCommands[index]()
+        functionToExecute.call()
+    }
 })
