@@ -56,9 +56,10 @@ for (let i = 0; i < mapRoomsKeys.length; i++) {
 
 // Send chat message to all players in map
 WA.state['receiveChatMessage'] = false
-const sendMessageToAllPlayers = (message, author) => {
+const sendMessageToAllPlayers = (message, author, roomId= null) => {
     WA.state['chatMessageContent'] = message
     WA.state['chatMessageAuthor'] = author
+    WA.state['chatMessageRoom'] = roomId // Receive only in a certain room
     WA.state['receiveChatMessage'] = true
 
     setTimeout(() => {
@@ -69,7 +70,9 @@ const sendMessageToAllPlayers = (message, author) => {
 // Ecouter le nouveau message
 WA.state.onVariableChange('receiveChatMessage').subscribe((value) => {
     if (value) {
-        WA.chat.sendChatMessage(WA.state['chatMessageContent'], WA.state['chatMessageAuthor'])
+        if (WA.state['chatMessageRoom'] === null || WA.state['chatMessageRoom'] === roomId) {
+            WA.chat.sendChatMessage(WA.state['chatMessageContent'], WA.state['chatMessageAuthor'])
+        }
     }
 })
 
@@ -79,7 +82,7 @@ let waitingForPloufPlouf = false
 const ploufPlouf = (dialog, roomId = null) => {
     randomPlayersList = [] // Reset players list
     waitingForPloufPlouf = true
-    sendMessageToAllPlayers(principalMapDialogs.ploufPlouf[dialog].sentence, omnipotentCharacter);
+    sendMessageToAllPlayers(principalMapDialogs.ploufPlouf[dialog].sentence, omnipotentCharacter, roomId);
     WA.state['roomId'] = roomId
     WA.state['selectRandomPlayer'] = true
     setTimeout(() => {
@@ -90,7 +93,7 @@ const ploufPlouf = (dialog, roomId = null) => {
             principalMapDialogs.ploufPlouf[dialog].selected,
             {
             name: selectRandomItemInArray(randomPlayersList)
-        }), omnipotentCharacter)
+        }), omnipotentCharacter, roomId)
         WA.state['addNameToRandomPlayerList'] = ''
         waitingForPloufPlouf = false
         randomPlayersList = []

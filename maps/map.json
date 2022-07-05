@@ -986,6 +986,24 @@
                  "width":0,
                  "x":508.474576271186,
                  "y":572.586588061901
+                }, 
+                {
+                 "height":0,
+                 "id":42,
+                 "name":"chatMessageRoom",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"default",
+                         "type":"string",
+                         "value":""
+                        }],
+                 "rotation":0,
+                 "type":"variable",
+                 "visible":true,
+                 "width":0,
+                 "x":147.459852540147,
+                 "y":557.519442480557
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1038,7 +1056,7 @@
          "y":0
         }],
  "nextlayerid":82,
- "nextobjectid":42,
+ "nextobjectid":43,
  "orientation":"orthogonal",
  "properties":[
         {
@@ -1047,7 +1065,7 @@
          "value":"..\/scripts\/principal-map-script.js"
         }],
  "renderorder":"right-down",
- "tiledversion":"1.7.2",
+ "tiledversion":"1.8.2",
  "tileheight":32,
  "tilesets":[
         {
@@ -1483,6 +1501,6 @@
         }],
  "tilewidth":32,
  "type":"map",
- "version":"1.6",
+ "version":"1.8",
  "width":30
 }
