@@ -380,3 +380,48 @@ WA.chat.onChatMessage((message) => {
         functionToExecute.call()
     }
 })
+
+// Panneaux
+const pannels = {
+    "PannelsZones/DisplayPannelZone": {
+        object: "displayPannelPopup",
+        content: "Commandes du chat : \"" + chatCommandsKeys.join('", "') + '"'
+    },
+    "PannelsZones/ParisPannelZone": {
+        object: "parisPannelPopup",
+        content: "Vers Paris"
+    },
+    "PannelsZones/AlicePannelZone": {
+        object: "alicePannelPopup",
+        content: "Terrier du lapin"
+    },
+    "PannelsZones/CavernPannelZone":  {
+        object: "cavernPannelPopup",
+        content: "Salle du trône"
+    },
+}
+
+const pannelsKeys = Object.keys(pannels)
+for (let i = 0; i < pannelsKeys.length; i++) {
+    let actionMessage
+    WA.room.onEnterLayer(pannelsKeys[i]).subscribe(() => {
+        actionMessage = WA.ui.displayActionMessage({
+            message: getSentenceWithVariables(dialogUtils.executeAction, {
+                action: dialogUtils.see
+            }),
+            callback: () => {
+                WA.ui.openPopup(pannels[pannelsKeys[i]].object, pannels[pannelsKeys[i]].content, [{
+                    label: "OK",
+                    callback: (popup) => {
+                        // Close the popup when the "Close" button is pressed.
+                        popup.close();
+                    }
+                }]);
+            }
+        })
+    })
+
+    WA.room.onLeaveLayer(pannelsKeys[i]).subscribe(() => {
+        actionMessage.remove()
+    })
+}

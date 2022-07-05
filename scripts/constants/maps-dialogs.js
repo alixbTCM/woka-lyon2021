@@ -263,7 +263,8 @@ const graalMapDialogs = {
 
 const dialogUtils = {
     executeAction: '[Espace] {action}',
-    shoot: 'Tirer'
+    shoot: 'Tirer',
+    see: 'Consulter'
 }
 
 export {
