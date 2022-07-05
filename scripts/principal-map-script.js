@@ -404,13 +404,14 @@ const pannels = {
 const pannelsKeys = Object.keys(pannels)
 for (let i = 0; i < pannelsKeys.length; i++) {
     let actionMessage
+    let currentPopup
     WA.room.onEnterLayer(pannelsKeys[i]).subscribe(() => {
         actionMessage = WA.ui.displayActionMessage({
             message: getSentenceWithVariables(dialogUtils.executeAction, {
                 action: dialogUtils.see
             }),
             callback: () => {
-                WA.ui.openPopup(pannels[pannelsKeys[i]].object, pannels[pannelsKeys[i]].content, [{
+                currentPopup = WA.ui.openPopup(pannels[pannelsKeys[i]].object, pannels[pannelsKeys[i]].content, [{
                     label: "OK",
                     callback: (popup) => {
                         // Close the popup when the "Close" button is pressed.
@@ -423,5 +424,6 @@ for (let i = 0; i < pannelsKeys.length; i++) {
 
     WA.room.onLeaveLayer(pannelsKeys[i]).subscribe(() => {
         actionMessage.remove()
+        currentPopup.close()
     })
 }
