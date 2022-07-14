@@ -123,12 +123,12 @@ const openZonesKeys = Object.keys(openZones)
 for (let i = 0; i<openZonesKeys.length; i++) {
     let layerTrigger
     WA.room.onEnterLayer(openZones[openZonesKeys[i]].layer).subscribe(() => {
-        layerTrigger = WA.ui.displayActionMessage({
-            message: getSentenceWithVariables(dialogUtils.executeAction, {
-                action: "Déverrouiller"
-            }),
-            callback: () => {
-                if (!openZones[openZonesKeys[i]].isUnlocked) {
+        if (!openZones[openZonesKeys[i]].isUnlocked) {
+            layerTrigger = WA.ui.displayActionMessage({
+                message: getSentenceWithVariables(dialogUtils.executeAction, {
+                    action: "Déverrouiller"
+                }),
+                callback: () => {
                     for (let j = 0; j < objectsToFind.length; j++) {
                         if (objectsToFind[j][openZonesKeys[i]]) {
                             if (objectsToFind[j][openZonesKeys[i]].found) {
@@ -141,8 +141,8 @@ for (let i = 0; i<openZonesKeys.length; i++) {
                         }
                     }
                 }
-            }
-        })
+            })
+        }
     })
 
     WA.room.onLeaveLayer(openZones[openZonesKeys[i]].layer).subscribe(() => {
