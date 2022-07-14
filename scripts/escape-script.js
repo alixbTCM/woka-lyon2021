@@ -1,7 +1,10 @@
 import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
-import {getSentenceWithVariables} from "./utils.js";
+import {getSentenceWithVariables, monologue} from "./utils.js";
 import {dialogUtils} from "./constants/maps-dialogs.js";
-import { myselfName } from "./constants/character-names.js"
+import { myselfName, fisherKing } from "./constants/character-names.js"
+import { escapeMapeGameRules } from "./constants/maps-game-rules.js"
+
+monologue(escapeMapeGameRules, fisherKing)
 
 const searchZones = {
     "SearchingZones1": {
