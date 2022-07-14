@@ -12,7 +12,7 @@ const searchZones = {
         },
         "bed2": {
             found: "J'ai trouvé {found} sous le matelas",
-            nothing: "Il n'y a rien ici... à part des puces de lit.",
+            nothing: "Ce n'est pas le moment de dormir !",
             hasBeenSearched: false
         },
         "cadre": {
@@ -89,7 +89,46 @@ const searchZones = {
         },
         "fridge": {
             found: "J'ai trouvé {found} dans le frigidaire",
-            nothing: "Rien du tout",
+            nothing: "Ce n'est pas le moment idéal pour manger.",
+            hasBeenSearched: false
+        },
+    },
+    "SearchingZones3": {
+        "plant": {
+            found: "J'ai trouvé {found} à l'intérieur du pot",
+            nothing: "Rien ici.",
+            hasBeenSearched: false
+        },
+        "books": {
+            found: "J'ai trouvé {found} dans cette bibliothèque",
+            nothing: "Ce n'est pas le moment de lire un livre !",
+            hasBeenSearched: false
+        },
+        "bed": {
+            found: "J'ai trouvé {found} sous le matelas",
+            nothing: "Quel lit gigantesque !",
+            hasBeenSearched: false
+        },
+        "globe": {
+            found: "J'ai trouvé {found} à l'intérieur de ce globe terrestre",
+            nothing: "Ce n'est pas le moment de réviser sa géographie !",
+            hasBeenSearched: false
+        },
+        "desk": {
+            found: "J'ai trouvé {found} dans un tiroir",
+            nothing: "Rien ici.",
+            hasBeenSearched: false
+        }
+    },
+    "SearchingZones4": {
+        "tenture1": {
+            found: "J'ai trouvé {found} derrière cette tenture",
+            nothing: "Il n'y a rien ici",
+            hasBeenSearched: false
+        },
+        "tenture2": {
+            found: "J'ai trouvé {found} derrière cette tenture",
+            nothing: "Il n'y a rien ici",
             hasBeenSearched: false
         },
     }
@@ -102,7 +141,14 @@ const objectsToFind = [
     },
     {
         "bedroomKey": {name: "la clé de la chambre", found: false},
-        "secondCodeNumber": {name: "la chiffre 2(deux) gravé", found: false}
+        "secondCodeNumber": {name: "le chiffre 2(deux) gravé", found: false}
+    },
+    {
+        "paintingKey": {name: "une étrange petite clé", found: false},
+        "thirdCodeNumber": {name: "le chiffre 0(zéro) gravé", found: false}
+    },
+    {
+        "fourthCodeNumber": {name: "le chiffre 3(trois) gravé", found: false}
     }
 ]
 
@@ -154,6 +200,9 @@ const openZones = {
     "kitchenKey": {
         isUnlocked: false,
         layer: "OpenZones/openKitchen",
+        action: "Déverrouiller",
+        lockedSentence: "Il me faudrait une clé pour ouvrir cette porte",
+        unlockedSentence: "La porte est ouverte",
         tiles: [
             {
                 x: 17,
@@ -172,6 +221,9 @@ const openZones = {
     "bedroomKey": {
         isUnlocked: false,
         layer: "OpenZones/openBedroom",
+        action: "Déverrouiller",
+        lockedSentence: "Il me faudrait une clé pour ouvrir cette porte",
+        unlockedSentence: "La porte est ouverte",
         tiles: [
             {
                 x: 27,
@@ -198,6 +250,75 @@ const openZones = {
                 tile: null
             },
         ]
+    },
+    "paintingKey": {
+        isUnlocked: false,
+        layer: "OpenZones/openSecretPassage",
+        action: "Examiner",
+        lockedSentence: "On dirait qu'il y a un méchanisme pour déplacer cette peinture... Il me faudrait une petite clé pour le déclencher.",
+        unlockedSentence: "Le cadre s'est déplacé !",
+        tiles: [
+            {
+                x: 34,
+                y: 10,
+                layer: 'doors',
+                tile: null
+            },
+            {
+                x: 35,
+                y: 10,
+                layer: 'doors',
+                tile: null
+            },
+            {
+                x: 36,
+                y: 10,
+                layer: 'doors',
+                tile: 'paintingUpLeftCorner'
+            },
+            {
+                x: 37,
+                y: 10,
+                layer: 'doors',
+                tile: 'paintingUpMiddle'
+            },
+            {
+                x: 38,
+                y: 10,
+                layer: 'doors',
+                tile: 'paintingUpRightCorner'
+            },
+            {
+                x: 34,
+                y: 11,
+                layer: 'doors',
+                tile: null
+            },
+            {
+                x: 35,
+                y: 11,
+                layer: 'doors',
+                tile: null
+            },
+            {
+                x: 36,
+                y: 11,
+                layer: 'doors',
+                tile: 'paintingDownLeftCorner'
+            },
+            {
+                x: 37,
+                y: 11,
+                layer: 'doors',
+                tile: 'paintingDownMiddle'
+            },
+            {
+                x: 38,
+                y: 11,
+                layer: 'doors',
+                tile: 'paintingDownRightCorner'
+            },
+        ]
     }
 }
 const openZonesKeys = Object.keys(openZones)
@@ -208,17 +329,17 @@ for (let i = 0; i<openZonesKeys.length; i++) {
         if (!openZones[openZonesKeys[i]].isUnlocked) {
             layerTrigger = WA.ui.displayActionMessage({
                 message: getSentenceWithVariables(dialogUtils.executeAction, {
-                    action: "Déverrouiller"
+                    action: openZones[openZonesKeys[i]].action
                 }),
                 callback: () => {
                     for (let j = 0; j < objectsToFind.length; j++) {
                         if (objectsToFind[j][openZonesKeys[i]]) {
                             if (objectsToFind[j][openZonesKeys[i]].found) {
                                 openZones[openZonesKeys[i]].isUnlocked = true
-                                WA.chat.sendChatMessage("La porte est ouverte", myselfName)
+                                WA.chat.sendChatMessage(openZones[openZonesKeys[i]].unlockedSentence, myselfName)
                                 WA.room.setTiles(openZones[openZonesKeys[i]].tiles)
                             } else {
-                                WA.chat.sendChatMessage("Il me faudrait une clé pour ouvrir cette porte", myselfName)
+                                WA.chat.sendChatMessage(openZones[openZonesKeys[i]].lockedSentence, myselfName)
                             }
                         }
                     }
