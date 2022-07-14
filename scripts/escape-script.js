@@ -164,7 +164,6 @@ for (let i = 0; i<searchZonesKeys.length; i++) {
         const r = Math.floor(Math.random() * zonesIndexes.length)
         randoms.push(zonesIndexes[r])
         zonesIndexes.splice(r, 1)
-        console.log(zonesIndexes)
     }
     
     for (let j = 0; j<zoneKeys.length; j++) {
