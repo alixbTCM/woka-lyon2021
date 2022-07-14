@@ -3,8 +3,6 @@ import {getSentenceWithVariables} from "./utils.js";
 import {dialogUtils} from "./constants/maps-dialogs.js";
 import { myselfName } from "./constants/character-names.js"
 
-WA.chat.sendChatMessage('TEST', "TEST")
-
 const searchZones = {
     "SearchingZones1": {
         "bed1": {
@@ -38,12 +36,73 @@ const searchZones = {
             hasBeenSearched: false
         }
     },
+    "SearchingZones2": {
+        "fireplace": {
+            found: "J'ai trouvé {found} dans l'âtre de la cheminée",
+            nothing: "Juste des cendres...",
+            hasBeenSearched: false
+        },
+        "pot": {
+            found: "J'ai trouvé {found} à l'intérieur de ce pot",
+            nothing: "Ce pot est vide... J'ai découvert le pot aux roses ! BA DUM TSS",
+            hasBeenSearched: false
+        },
+        "armure3": {
+            found: "J'ai trouvé {found} dans la visière",
+            nothing: "Cette armure est sinistre",
+            hasBeenSearched: false
+        },
+        "armure2": {
+            found: "J'ai trouvé {found} dans la visière",
+            nothing: "Cette armure est sinistre",
+            hasBeenSearched: false
+        },
+        "armure1": {
+            found: "J'ai trouvé {found} dans la visière",
+            nothing: "Cette armure est sinistre",
+            hasBeenSearched: false
+        },
+        "cadre": {
+            found: "J'ai trouvé {found} derrière la peinture",
+            nothing: "Quelle belle oeuvre",
+            hasBeenSearched: false
+        },
+        "plant2": {
+            found: "J'ai trouvé {found} dans le pot de cette plante",
+            nothing: "Qui peut-bien arroser les plante dans ce château abandonné ?",
+            hasBeenSearched: false
+        },
+        "plant": {
+            found: "J'ai trouvé {found} dans le pot de cette plante",
+            nothing: "Qui peut-bien arroser les plante dans ce château abandonné ?",
+            hasBeenSearched: false
+        },
+        "kitchenFurniture": {
+            found: "J'ai trouvé {found} à l'intérieur de ce meuble",
+            nothing: "Quel bazard ici",
+            hasBeenSearched: false
+        },
+        "bottles": {
+            found: "J'ai trouvé {found} au milieu des bouteilles",
+            nothing: "Au moins, si je suis coincé(e) ici longtemps, j'aurais de quoi étancher ma soif...",
+            hasBeenSearched: false
+        },
+        "fridge": {
+            found: "J'ai trouvé {found} dans le frigidaire",
+            nothing: "Rien du tout",
+            hasBeenSearched: false
+        },
+    }
 }
 
 const objectsToFind = [
     {
         "kitchenKey": {name: "la clé de la cuisine", found: false},
         "firstCodeNumber": {name: "le chiffre 0 (zéro) gravé", found: false}
+    },
+    {
+        "bedroomKey": {name: "la clé de la chambre", found: false},
+        "secondCodeNumber": {name: "la chiffre 2(deux) gravé", found: false}
     }
 ]
 
@@ -72,8 +131,6 @@ for (let i = 0; i<searchZonesKeys.length; i++) {
                      }),
                      callback: () => {
                          if (randoms.indexOf(zoneKeys[j]) !== -1) {
-                             console.log('KEYS', objectKeys[randoms.indexOf(zoneKeys[j])])
-                             console.log('OBJECT',  objectsToFind[i][objectKeys[randoms.indexOf(zoneKeys[j])]])
                              WA.chat.sendChatMessage(getSentenceWithVariables(searchZones[searchZonesKeys[i]][zoneKeys[j]].found, {
                                  found: objectsToFind[i][objectKeys[randoms.indexOf(zoneKeys[j])]].name
                              }), myselfName)
@@ -115,7 +172,32 @@ const openZones = {
     "bedroomKey": {
         isUnlocked: false,
         layer: "OpenZones/openBedroom",
-        tiles: []
+        tiles: [
+            {
+                x: 17,
+                y: 11,
+                layer: 'doors',
+                tile: null
+            },
+            {
+                x: 18,
+                y: 11,
+                layer: 'doors',
+                tile: null
+            },
+            {
+                x: 17,
+                y: 10,
+                layer: 'doorsUp',
+                tile: null
+            },
+            {
+                x: 18,
+                y: 10,
+                layer: 'doorsUp',
+                tile: null
+            },
+        ]
     }
 }
 const openZonesKeys = Object.keys(openZones)
