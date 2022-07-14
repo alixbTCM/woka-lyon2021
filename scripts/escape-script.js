@@ -156,13 +156,13 @@ const openZones = {
         layer: "OpenZones/openKitchen",
         tiles: [
             {
-                x: 7,
+                x: 17,
                 y: 9,
                 layer: 'doors',
                 tile: null
             },
             {
-                x: 7,
+                x: 17,
                 y: 8,
                 layer: 'doorsUp',
                 tile: null
@@ -174,25 +174,25 @@ const openZones = {
         layer: "OpenZones/openBedroom",
         tiles: [
             {
-                x: 17,
+                x: 27,
                 y: 11,
                 layer: 'doors',
                 tile: null
             },
             {
-                x: 18,
+                x: 28,
                 y: 11,
                 layer: 'doors',
                 tile: null
             },
             {
-                x: 17,
+                x: 27,
                 y: 10,
                 layer: 'doorsUp',
                 tile: null
             },
             {
-                x: 18,
+                x: 28,
                 y: 10,
                 layer: 'doorsUp',
                 tile: null
