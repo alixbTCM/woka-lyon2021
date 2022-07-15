@@ -100,7 +100,7 @@ for (let i = 0; i<randomEnigmaAnswersKeys.length; i++) {
                                 ])
                                 WA.chat.sendChatMessage("Félicitation, tu as répondu à mon énigme !", fisherKing)
                             } else {
-                                console.log('perdu. Retour à la map principale')
+                                WA.nav.goToRoom('./map.json')
                             }
                             popup.close();
                         }
@@ -246,7 +246,7 @@ for (let i = 0; i < graalCluesKeys.length; i++) {
                     ])
                     WA.chat.sendChatMessage("Bien joué, tu peux continuer ta quête !", fisherKing)
                 } else {
-                    console.log('perdu --> rediriger vers la map principale ? Ou juste empêcher de gagner ensuite et recharger la page ?')
+                    WA.nav.goToRoom('./map.json')
                 }
             }
         })
