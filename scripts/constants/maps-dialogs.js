@@ -233,32 +233,6 @@ const graalMapDialogs = {
             }
         },
     ],
-    graalClues: {
-        abundancy: [
-            'Une corne de machin truc qui file de la bouffe pour l’éternité, ça se laisse pas moisir dans la nature.',
-            'Selon la légende, le Graal a été créé à partir d\'une des cornes d\'Amalthée',
-        ],
-        anchovy: [
-            'Vous pouvez être sûrs que le Graal, c\'est un bocal à anchois.'
-        ],
-        cup: [
-            'Evier métal',
-            'Il m\'éclaire quand il brille dans la nuit. Mon évier de minuit !',
-            'Alors c\'est ça, le Graal ? ça ressemble à un vieux gobelet...'
-        ],
-        ring: [
-            'Une vieille légende raconte qu\'un jour, le Graal a été volé par un hobbit...',
-            'Un Graal pour les gouverner tous. Un Graal pour les trouver. Un Graal pour les amener tous et dans les ténèbres les lier.',
-            'Le Graal doit être ramené au Mordor pour y être détruit'
-        ],
-        stone: [
-            'Y\'a un an au pays de Galles, y a un type tout bizarre qui vient me voir. Y me dit oui tatati, tatata, le Graal, en fait, c\'est une pierre incandescente.',
-            'Pierre qui roule n\'amasse pas mousse'
-        ],
-        other: [
-            'Le Graal est une coupe'
-        ]
-    }
 }
 
 const dialogUtils = {
