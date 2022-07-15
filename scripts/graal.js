@@ -2,7 +2,7 @@ import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 import {getSentenceWithVariables} from "./utils.js";
 import {dialogUtils} from "./constants/maps-dialogs.js";
 import { graalMapGameRules } from './constants/maps-game-rules.js'
-import {myselfName} from "./constants/character-names.js";
+import {fisherKing, myselfName} from "./constants/character-names.js";
 
 let actionMessage
 let currentPopup
@@ -131,7 +131,33 @@ for (let i = 0; i < graalCluesKeys.length; i++) {
             }),
             callback: () => {
                 if (graalCluesKeys[i] === trueGraal) {
-                    console.log('gagné --> débloquer la porte')
+                    WA.room.setTiles([
+                        {
+                            x: 14,
+                            y: 6,
+                            layer: 'enigmaDoor',
+                            tile: null
+                        },
+                        {
+                            x: 15,
+                            y: 6,
+                            layer: 'enigmaDoor',
+                            tile: null
+                        },
+                        {
+                            x: 14,
+                            y: 5,
+                            layer: 'enigmaDoor',
+                            tile: null
+                        },
+                        {
+                            x: 15,
+                            y: 5,
+                            layer: 'enigmaDoor',
+                            tile: null
+                        }
+                    ])
+                    WA.chat.sendChatMessage("Bien joué, tu peux continuer ta quête !", fisherKing)
                 } else {
                     console.log('perdu --> rediriger vers la map principale')
                 }
