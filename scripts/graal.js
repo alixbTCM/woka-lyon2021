@@ -121,3 +121,25 @@ for (let i = 0; i<cluesZonesKeys.length; i++) {
         layerTrigger.remove()
     })
 }
+
+for (let i = 0; i < graalCluesKeys.length; i++) {
+    let layerTrigger
+    WA.room.onEnterLayer(graalCluesKeys[i]).subscribe(() => {
+        layerTrigger = WA.ui.displayActionMessage({
+            message: getSentenceWithVariables(dialogUtils.executeAction, {
+                action: "C'est le Graal ! J'en suis sûr."
+            }),
+            callback: () => {
+                if (graalCluesKeys[i] === trueGraal) {
+                    console.log('gagné --> débloquer la porte')
+                } else {
+                    console.log('perdu --> rediriger vers la map principale')
+                }
+            }
+        })
+    })
+
+    WA.room.onLeaveLayer(graalCluesKeys[i]).subscribe(() => {
+        layerTrigger.remove()
+    })
+}
