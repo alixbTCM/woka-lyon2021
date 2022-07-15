@@ -1,6 +1,6 @@
 import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 import {getSentenceWithVariables} from "./utils.js";
-import {dialogUtils} from "./constants/maps-dialogs.js";
+import {dialogUtils, graalMapDialogs} from "./constants/maps-dialogs.js";
 import { graalMapGameRules } from './constants/maps-game-rules.js'
 import {fisherKing, myselfName} from "./constants/character-names.js";
 
@@ -27,6 +27,93 @@ WA.room.onLeaveLayer('rulesZone').subscribe(() => {
     actionMessage.remove()
     currentPopup.close()
 })
+
+
+const randomEnigma = graalMapDialogs.riddle[Math.floor(Math.random() * graalMapDialogs.riddle.length)]
+WA.room.onEnterLayer('enigmaZone').subscribe(() => {
+    actionMessage = WA.ui.displayActionMessage({
+        message: getSentenceWithVariables(dialogUtils.executeAction, {
+            action: dialogUtils.see
+        }),
+        callback: () => {
+            currentPopup = WA.ui.openPopup('enigmaDisplaying', `Pour continuer votre quête, vous devez répondre à l'énigme suivante : \"${randomEnigma.question}\"`, [{
+                label: "OK",
+                callback: (popup) => {
+                    // Close the popup when the "Close" button is pressed.
+                    popup.close();
+                }
+            }]);
+        }
+    })
+})
+
+WA.room.onLeaveLayer('enigmaZone').subscribe(() => {
+    actionMessage.remove()
+    currentPopup.close()
+})
+
+const randomEnigmaAnswersKeys = Object.keys(randomEnigma.answers)
+for (let i = 0; i<randomEnigmaAnswersKeys.length; i++) {
+    WA.room.onEnterLayer('answers/' + randomEnigmaAnswersKeys[i]).subscribe(() => {
+        actionMessage = WA.ui.displayActionMessage({
+            message: getSentenceWithVariables(dialogUtils.executeAction, {
+                action: "Voir la réponse " + randomEnigmaAnswersKeys[i].toUpperCase()
+            }),
+            callback: () => {
+                currentPopup = WA.ui.openPopup('answer' + randomEnigmaAnswersKeys[i].toUpperCase() + 'Displaying', randomEnigma.answers[randomEnigmaAnswersKeys[i]].text, [{
+                    label: "Fermer",
+                    callback: (popup) => {
+                        // Close the popup when the "Close" button is pressed.
+                        popup.close();
+                    }
+                },
+                    {
+                        label: "C'est ma réponse !",
+                        callback: (popup) => {
+                            // Close the popup when the "Close" button is pressed.
+                            if (randomEnigma.answers[randomEnigmaAnswersKeys[i]].win) {
+                                WA.room.setTiles([
+                                    {
+                                        x: 14,
+                                        y: 1,
+                                        layer: 'enigmaDoor',
+                                        tile: null
+                                    },
+                                    {
+                                        x: 15,
+                                        y: 1,
+                                        layer: 'enigmaDoor',
+                                        tile: null
+                                    },
+                                    {
+                                        x: 14,
+                                        y: 2,
+                                        layer: 'enigmaDoor',
+                                        tile: null
+                                    },
+                                    {
+                                        x: 15,
+                                        y: 2,
+                                        layer: 'enigmaDoor',
+                                        tile: null
+                                    }
+                                ])
+                                WA.chat.sendChatMessage("Félicitation, tu as répondu à mon énigme !", fisherKing)
+                            } else {
+                                console.log('perdu. Retour à la map principale')
+                            }
+                            popup.close();
+                        }
+                    }]);
+            }
+        })
+    })
+
+    WA.room.onLeaveLayer('answers/' + randomEnigmaAnswersKeys[i]).subscribe(() => {
+        actionMessage.remove()
+        currentPopup.close()
+    })
+}
 
 const cluesZones = {
     'clues/book': {
@@ -134,32 +221,32 @@ for (let i = 0; i < graalCluesKeys.length; i++) {
                     WA.room.setTiles([
                         {
                             x: 14,
-                            y: 6,
+                            y: 16,
                             layer: 'enigmaDoor',
                             tile: null
                         },
                         {
                             x: 15,
-                            y: 6,
+                            y: 16,
                             layer: 'enigmaDoor',
                             tile: null
                         },
                         {
                             x: 14,
-                            y: 5,
+                            y: 15,
                             layer: 'enigmaDoor',
                             tile: null
                         },
                         {
                             x: 15,
-                            y: 5,
+                            y: 15,
                             layer: 'enigmaDoor',
                             tile: null
                         }
                     ])
                     WA.chat.sendChatMessage("Bien joué, tu peux continuer ta quête !", fisherKing)
                 } else {
-                    console.log('perdu --> rediriger vers la map principale')
+                    console.log('perdu --> rediriger vers la map principale ? Ou juste empêcher de gagner ensuite et recharger la page ?')
                 }
             }
         })
