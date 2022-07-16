@@ -235,6 +235,11 @@ const graalMapDialogs = {
     ],
 }
 
+
+const finalMapDalogs = {
+    finalPopup: "Et c'est ainsi qu'après de nombreuses épreuves, l'intrépide {name} parvint à atteindre l'épée magique et tenta de la retirer."
+}
+
 const dialogUtils = {
     executeAction: '[Espace] {action}',
     shoot: 'Tirer',
@@ -244,5 +249,6 @@ const dialogUtils = {
 export {
     principalMapDialogs,
     graalMapDialogs,
-    dialogUtils
+    dialogUtils,
+    finalMapDalogs
 }
