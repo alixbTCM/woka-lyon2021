@@ -29,7 +29,7 @@ WA.room.onEnterLayer('getSwordZone').subscribe(() => {
     })
 })
 
-WA.room.onLeaveLayer('rulesZone').subscribe(() => {
+WA.room.onLeaveLayer('getSwordZone').subscribe(() => {
     actionMessage.remove()
     currentPopup.close()
 })
