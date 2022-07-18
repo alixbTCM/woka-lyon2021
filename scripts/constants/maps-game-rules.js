@@ -5,9 +5,9 @@ const graalMapGameRules = [
 ]
 
 const escapeMapeGameRules = [
-    'Bienvenue dans le chateau du roi Pêcheur !',
-    'Afin de poursuivre votre quête, vous devez réussir à vous échapper de cette salle.',
-    'Bonne chance !'
+    'Qui OSE pénétrer en ma demeure ?!?',
+    'ALORS COMME ÇA, VOUS VOUS PENSEZ DIGNE D\'AVALON ?',
+    'Voyons déjà si vous parvenez à sortir d\'ici vivants !'
 ]
 
 const waterTestRules = [

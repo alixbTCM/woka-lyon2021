@@ -4,6 +4,7 @@ const myselfName = 'Ma voix intérieure'
 const omnipotentCharacter = 'Licorne cosmique'
 const waterTestRuleName = 'Mère des requins'
 const racingTestRuleName = 'Maître du temps'
+const fisherKing = "Roi pêcheur"
 
 export {
     oldManName,
@@ -11,5 +12,6 @@ export {
     myselfName,
     omnipotentCharacter,
     waterTestRuleName,
-    racingTestRuleName
+    racingTestRuleName,
+    fisherKing
 }
