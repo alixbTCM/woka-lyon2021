@@ -209,7 +209,7 @@
         {
          "columns":6,
          "firstgid":1,
-         "image":"..\/src\/assets\/Special_Zones.png",
+         "image":"images\/Special_Zones.png",
          "imageheight":64,
          "imagewidth":192,
          "margin":0,
@@ -245,7 +245,7 @@
         {
          "columns":16,
          "firstgid":205,
-         "image":"..\/Cave1-A1.png",
+         "image":"images\/Cave1-A1.png",
          "imageheight":384,
          "imagewidth":512,
          "margin":0,
@@ -258,7 +258,7 @@
         {
          "columns":8,
          "firstgid":397,
-         "image":"..\/src\/assets\/Cave1-EarthA5.png",
+         "image":"images\/Cave1-EarthA5.png",
          "imageheight":512,
          "imagewidth":256,
          "margin":0,
@@ -271,7 +271,7 @@
         {
          "columns":16,
          "firstgid":525,
-         "image":"..\/src\/assets\/Cave1-EarthB.png",
+         "image":"images\/Cave1-EarthB.png",
          "imageheight":512,
          "imagewidth":512,
          "margin":0,
@@ -284,7 +284,7 @@
         {
          "columns":5,
          "firstgid":781,
-         "image":"..\/src\/assets\/isbleeding.png",
+         "image":"images\/isbleeding.png",
          "imageheight":32,
          "imagewidth":160,
          "margin":0,
@@ -360,7 +360,7 @@
         {
          "columns":5,
          "firstgid":786,
-         "image":"..\/src\/assets\/isgood.png",
+         "image":"images\/isgood.png",
          "imageheight":32,
          "imagewidth":160,
          "margin":0,
@@ -392,7 +392,7 @@
         {
          "columns":16,
          "firstgid":791,
-         "image":"..\/downloaded_tilesets\/[GOOD]Ti_exterior(22).png",
+         "image":"images\/[GOOD]Ti_exterior(22).png",
          "imageheight":512,
          "imagewidth":512,
          "margin":0,
@@ -405,7 +405,7 @@
         {
          "columns":8,
          "firstgid":1047,
-         "image":"..\/src\/assets\/Pipoya RPG Tileset 32x32\/[Base]BaseChip_pipo.png",
+         "image":"images\/[Base]BaseChip_pipo.png",
          "imageheight":4256,
          "imagewidth":256,
          "margin":0,

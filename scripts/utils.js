@@ -34,15 +34,32 @@ const triggerAnimationWithLayers = async (layers, time=300) => {
     toggleLayersVisibility(layers[layers.length-1], false)
 }
 
-const writeMultiLinesText = (array, author) => {
-    for (let i = 0; i < array.length; i++) {
-        WA.chat.sendChatMessage(array[i], author)
+const getSentenceWithVariables = (message, variables = {}) => {
+    let newMessage = message
+    const variablesKeys = Object.keys(variables)
+    for (let i = 0; i < variablesKeys.length; i++) {
+        newMessage = newMessage.replaceAll('{' + variablesKeys[i] + '}', variables[variablesKeys[i]])
     }
+
+    return newMessage
+}
+
+const monologue = (messages, author, variables = {}) => {
+    for (let i = 0; i<messages.length; i++) {
+        WA.chat.sendChatMessage(getSentenceWithVariables(messages[i], variables), author)
+    }
+}
+
+const selectRandomItemInArray = (array) => {
+    const random = Math.floor(Math.random() * array.length)
+    return array[random]
 }
 
 export {
     toggleLayersVisibility,
     triggerAnimationWithLayers,
-    writeMultiLinesText,
+    getSentenceWithVariables,
+    monologue,
+    selectRandomItemInArray,
     wait
 }

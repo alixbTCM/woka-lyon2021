@@ -1,7 +1,7 @@
 import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 import {attackTestRuleName} from './constants/character-names.js';
 import {attackTestRules} from './constants/maps-game-rules.js';
-import {wait, writeMultiLinesText, toggleLayersVisibility} from "./utils.js";
+import {wait, monologue, toggleLayersVisibility} from "./utils.js";
 //
 // WA.room.onEnterLayer('startRacing').subscribe( async()=> {
 //     const startTime = new Date
@@ -376,7 +376,7 @@ WA.room.onEnterLayer('tuto').subscribe(() => {
     triggerTuto = WA.ui.displayActionMessage({
         message: "[ESPACE] Voir les règles" ,
         callback: () => {
-            writeMultiLinesText(attackTestRules, attackTestRuleName)
+            monologue(attackTestRules, attackTestRuleName)
         }
     });
 })

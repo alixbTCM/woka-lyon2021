@@ -1,12 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="154804f8-a4f2-45a9-bced-0b7f3f631b1f" name="Changes" comment="tuto setup">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSPlus_TileB_Ship (1).tsx" beforeDir="false" afterPath="$PROJECT_DIR$/DSPlus_TileB_Ship (1).tsx" afterDir="false" />
+    <list default="true" id="154804f8-a4f2-45a9-bced-0b7f3f631b1f" name="Changes" comment="attack test setup">
+      <change afterPath="$PROJECT_DIR$/maps/BaseChio.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maps/final-map.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maps/graal.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maps/images/BaseChipNight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maps/images/LadyOfTheLAkeNight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maps/images/[A]Dirt2_pipo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maps/images/[Base]BaseChip_pipo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maps/images/cascade-with-doors-old.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maps/images/cascade-with-doors.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maps/images/graals.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maps/images/last-door-closed-found.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maps/images/moving-water.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maps/tilesets/BaseChio.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maps/tilesets/BaseChipNight.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maps/tilesets/Cave1-EarthB.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maps/tilesets/DSPlus_TileB_Ship (1).tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maps/tilesets/LadyOfTheLAke.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maps/tilesets/LadyOfTheLAkeNight.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maps/tilesets/[A]Dirt2_pipo.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maps/tilesets/[GOOD]Ti_exterior(22).tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maps/tilesets/abondance-anchois.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maps/tilesets/addwork.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maps/tilesets/graals.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maps/tilesets/last-door-closed-found.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maps/tilesets/moving-water.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/constants/chat-commands.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/escape-script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/final-map-script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/graal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/principal-map-script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BrightForest-A1 (1).tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BrightForest-A1 (2).tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BrightForest-A1 (3) (2).png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/images/BrightForest-A1 (3) (2).png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BrightForest-A1 (3).tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BrightForest-A1.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BrightForest-A12.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cave1-A1.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/images/Cave1-A1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cave1-A1.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/maps/tilesets/Cave1-A1.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cave1-EarthA5.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/maps/tilesets/Cave1-EarthA5.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cave1-EarthB.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSPlus_TileB_Ship (1).png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/images/DSPlus_TileB_Ship (1).png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSPlus_TileB_Ship (1).tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LadyOfTheLAke.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/images/LadyOfTheLAke.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ruin-F.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/maps/tilesets/Ruin-F.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SciFi_Warehouse_A3.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/maps/tilesets/SciFi_Warehouse_A3.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ti_exterior(20).png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/images/Ti_exterior(20).png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TileC116_PixelScaled.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/[A]Dirt2_pipo.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/[A]Water2_pipo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/maps/tilesets/[A]Water2_pipo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/[A]WaterFall2_pipo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/maps/tilesets/[A]WaterFall2_pipo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/[GOOD]Ti_exterior(22).tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abondance-anchois.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/images/abondance-anchois.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addwork.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/beatch-limits.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/images/beatch-limits.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/canon-explosion.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/images/canon-explosion.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cascade-with-doors.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cascade-with-doors.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/maps/tilesets/cascade-with-doors.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/downloaded_tilesets/[GOOD]Ti_exterior(22).png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/images/[GOOD]Ti_exterior(22).png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/isbleeding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/maps/tilesets/isbleeding.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/isgood.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/maps/tilesets/isgood.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jack-sparrow-flag.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/images/jack-sparrow-flag.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/map.json" beforeDir="false" afterPath="$PROJECT_DIR$/maps/map.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/Special_Zones.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/maps/tilesets/Special_Zones.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/Ti_exterior(20).tsx" beforeDir="false" afterPath="$PROJECT_DIR$/maps/tilesets/Ti_exterior(20).tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/[Base]BaseChip_pipo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/maps/tilesets/[Base]BaseChip_pipo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/escape.json" beforeDir="false" afterPath="$PROJECT_DIR$/maps/escape.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/racing-test.json" beforeDir="false" afterPath="$PROJECT_DIR$/maps/racing-test.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/tile_PixelScaled.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/water-test.json" beforeDir="false" afterPath="$PROJECT_DIR$/maps/water-test.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/porte-liane.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/images/porte-liane.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/porte-liane.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/maps/tilesets/porte-liane.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pouf.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/images/pouf.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pouf.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/maps/tilesets/pouf.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/racingstart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/maps/tilesets/racingstart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/attack-test-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/attack-test-script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/constants/character-names.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/constants/character-names.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/constants/maps-dialogs.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/constants/maps-dialogs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/constants/maps-game-rules.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/constants/maps-game-rules.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/constants/maps-layers.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/constants/maps-layers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/my-script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/racing-test-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/racing-test-script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/water-test-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/water-test-script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sharks.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/images/sharks.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/Cave1-EarthA5.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/images/Cave1-EarthA5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/Cave1-EarthB.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/images/Cave1-EarthB.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/JapaneseVillage.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/images/JapaneseVillage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/Ruin-F.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/images/Ruin-F.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/SciFi_Warehouse_A3.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/images/SciFi_Warehouse_A3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/Special_Zones.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/images/Special_Zones.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/addwork.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/images/addwork.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/isbleeding.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/images/isbleeding.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/isgood.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/images/isgood.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/map-morgane.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/map-morgane.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/racingstart.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/images/racingstart.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/wedding.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/images/wedding.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/zen-limits.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/maps/tilesets/zen-limits.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tile_PixelScaled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vieux-sage.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/images/vieux-sage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wedding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/maps/tilesets/wedding.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zen-limits.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/images/zen-limits.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +167,7 @@
       <workItem from="1655811513263" duration="895000" />
       <workItem from="1655814778608" duration="9422000" />
       <workItem from="1655880984743" duration="54988000" />
+      <workItem from="1659524919969" duration="942000" />
     </task>
     <task id="LOCAL-00001" summary="water test setup">
       <created>1655888865291</created>
@@ -106,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656430217302</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="attack test setup">
+      <created>1659525461719</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1659525461719</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +234,7 @@
     <MESSAGE value="water test + racing test" />
     <MESSAGE value="merge master" />
     <MESSAGE value="tuto setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="tuto setup" />
+    <MESSAGE value="attack test setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="attack test setup" />
   </component>
 </project>
