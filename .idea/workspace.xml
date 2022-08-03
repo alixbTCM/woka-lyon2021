@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="154804f8-a4f2-45a9-bced-0b7f3f631b1f" name="Changes" comment="merge master">
+    <list default="true" id="154804f8-a4f2-45a9-bced-0b7f3f631b1f" name="Changes" comment="tuto setup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/[GOOD]Ti_exterior(22).tsx" beforeDir="false" afterPath="$PROJECT_DIR$/[GOOD]Ti_exterior(22).tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/map.json" beforeDir="false" afterPath="$PROJECT_DIR$/map.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/racing-test-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/racing-test-script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/racing-test.json" beforeDir="false" afterPath="$PROJECT_DIR$/maps/racing-test.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSPlus_TileB_Ship (1).tsx" beforeDir="false" afterPath="$PROJECT_DIR$/DSPlus_TileB_Ship (1).tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/constants/character-names.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/constants/character-names.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/constants/maps-animation-layers.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/constants/maps-animation-layers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/constants/maps-game-rules.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/constants/maps-game-rules.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/water-test-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/water-test-script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/water-test.json" beforeDir="false" afterPath="$PROJECT_DIR$/maps/water-test.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +34,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/maps" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -49,13 +43,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projets\woka-lyon2021\maps" />
       <recent name="C:\Projets\woka-lyon2021" />
+      <recent name="C:\Projets\woka-lyon2021\scripts" />
       <recent name="C:\Projets\woka-lyon2021\src\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projets\woka-lyon2021" />
       <recent name="C:\Projets\woka-lyon2021\maps" />
       <recent name="C:\Projets\woka-lyon2021\scripts" />
-      <recent name="C:\Projets\woka-lyon2021" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -73,7 +69,7 @@
       <workItem from="1655473587359" duration="594000" />
       <workItem from="1655811513263" duration="895000" />
       <workItem from="1655814778608" duration="9422000" />
-      <workItem from="1655880984743" duration="24979000" />
+      <workItem from="1655880984743" duration="54988000" />
     </task>
     <task id="LOCAL-00001" summary="water test setup">
       <created>1655888865291</created>
@@ -103,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656415616525</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="tuto setup">
+      <created>1656430217302</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1656430217302</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +128,7 @@
     <MESSAGE value="water test continue" />
     <MESSAGE value="water test + racing test" />
     <MESSAGE value="merge master" />
-    <option name="LAST_COMMIT_MESSAGE" value="merge master" />
+    <MESSAGE value="tuto setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="tuto setup" />
   </component>
 </project>

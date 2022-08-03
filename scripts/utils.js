@@ -43,5 +43,6 @@ const writeMultiLinesText = (array, author) => {
 export {
     toggleLayersVisibility,
     triggerAnimationWithLayers,
-    writeMultiLinesText
+    writeMultiLinesText,
+    wait
 }
