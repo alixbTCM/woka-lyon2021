@@ -22,9 +22,21 @@ const racingTestRules = [
     'Aller on se bouge les fesses !'
 ]
 
+const attackTestRules = [
+    'Hé ho matelot !',
+    'Tu dois maintenant prouver ta valeur en mer, ah ! Ca tombe bien, voilà un navire enemie.',
+    'Coule moi ce bateau rempli de raclûres ! Pour ça tu vas devoir utiliser le canon qui est devant toi. Les règles sont simples, tu peux faire trois actions (ton adversaire peut faire de même) :',
+    '- Recharger : Il te faut des boulets à mettre dans ton canon, tu dois en mettre trois maximum',
+    '- Se protéger : Te protège du tire adverse, ton navire ne prend pas de dégât',
+    '- Tirer : Tu utilises une de tes munitions et tu tires ! Si l\'adversaire ne se protège pas, il prend un dégât',
+    'Ton navire comme celui de ton adversaire peut encaisser 3 tires.'
+
+]
+
 export {
     graalMapGameRules,
     escapeMapeGameRules,
     racingTestRules,
-    waterTestRules
+    waterTestRules,
+    attackTestRules
 }

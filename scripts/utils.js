@@ -60,5 +60,6 @@ export {
     triggerAnimationWithLayers,
     getSentenceWithVariables,
     monologue,
-    selectRandomItemInArray
+    selectRandomItemInArray,
+    wait
 }
