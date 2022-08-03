@@ -24,7 +24,7 @@
                 {
                  "name":"exitUrl",
                  "type":"string",
-                 "value":".\/escape.json"
+                 "value":"\/escape.json"
                 }],
          "type":"tilelayer",
          "visible":true,
