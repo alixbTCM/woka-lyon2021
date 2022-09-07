@@ -239,7 +239,7 @@
         {
          "columns":6,
          "firstgid":1,
-         "image":"..\/src\/assets\/Special_Zones.png",
+         "image":"images\/Special_Zones.png",
          "imageheight":64,
          "imagewidth":192,
          "margin":0,
@@ -285,7 +285,7 @@
         {
          "columns":16,
          "firstgid":1077,
-         "image":"..\/DSPlus_TileB_Ship (1).png",
+         "image":"images\/DSPlus_TileB_Ship (1).png",
          "imageheight":512,
          "imagewidth":512,
          "margin":0,
@@ -298,7 +298,7 @@
         {
          "columns":16,
          "firstgid":1333,
-         "image":"..\/BrightForest-A1 (3) (2).png",
+         "image":"images\/BrightForest-A1 (3) (2).png",
          "imageheight":384,
          "imagewidth":512,
          "margin":0,
@@ -450,7 +450,7 @@
         {
          "columns":1,
          "firstgid":1793,
-         "image":"..\/canon-explosion.png",
+         "image":"images\/canon-explosion.png",
          "imageheight":32,
          "imagewidth":32,
          "margin":0,
