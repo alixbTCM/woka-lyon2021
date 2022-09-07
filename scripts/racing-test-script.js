@@ -1,7 +1,8 @@
 import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
-import {racingTestRuleName, waterTestRuleName} from './constants/character-names.js';
-import {racingTestRules, waterTestRules} from './constants/maps-game-rules.js';
-import {monologue} from "./utils.js";
+import {racingTestRuleName} from './constants/character-names.js';
+import {racingTestRules} from './constants/maps-game-rules.js';
+import {monologue, toggleLayersVisibility} from "./utils.js";
+
 
 WA.room.onEnterLayer('startRacing').subscribe( async()=> {
     const startTime = new Date
@@ -50,6 +51,31 @@ WA.room.onEnterLayer('tuto').subscribe(() => {
 WA.room.onLeaveLayer('tuto').subscribe(() => {
     triggerTuto.remove()
 })
+
+let triggerFakeEntryMessage
+WA.room.onEnterLayer('triggerFakeEntry').subscribe(() => {
+    endMessage = WA.ui.displayActionMessage({
+        message: "BOUH",
+    })
+    toggleLayersVisibility('fakeEntry')
+})
+
+WA.room.onLeaveLayer('triggerFakeEntry').subscribe(() => {
+    triggerFakeEntryMessage.remove()
+})
+
+let endMessage
+WA.room.onEnterLayer('endText').subscribe(() => {
+    endMessage = WA.ui.displayActionMessage({
+        message: "*Un mystérieux miroire semble vous inciter à venir le voir...*",
+    })
+})
+
+WA.room.onLeaveLayer('endText').subscribe(() => {
+    endMessage.remove()
+})
+
+
 
 
 

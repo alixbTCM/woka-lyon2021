@@ -121,5 +121,16 @@ WA.room.onEnterLayer('goodZone2').subscribe( async()=> {
 
 })
 
+let endMessage
+WA.room.onEnterLayer('exitText').subscribe(() => {
+    endMessage = WA.ui.displayActionMessage({
+        message: "*Il va falloir remonter à la surface et regagner la terre ferme maintenant... Oh? Une echelle menant à un bateau? Quelle aubaine!*",
+    })
+})
+
+WA.room.onLeaveLayer('exitText').subscribe(() => {
+    endMessage.remove()
+})
+
 
 
