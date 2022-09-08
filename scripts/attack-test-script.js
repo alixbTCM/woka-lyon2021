@@ -43,15 +43,15 @@ let me = {
     action: null,
     hearthPosition: {
         1: {
-            x: 5,
+            x: 4,
             y: 5
         },
         2: {
-            x: 6,
+            x: 5,
             y: 5
         },
         3: {
-            x: 7,
+            x: 6,
             y: 5
         },
     },
@@ -147,7 +147,7 @@ const displayShield = (player) => {
             layer: 'shield'
         },
     ]);
-    wait(1000).then(r => {
+    wait(1500).then(r => {
             WA.room.setTiles([
                 {
                     x: player === 'me' ? 7 : 10,
@@ -167,7 +167,42 @@ let endGame = false
 
 const sendChatComment = false
 
+const resetHearth = (player, position) => {
+    WA.room.setTiles([
+        {
+            x: position.x,
+            y: position.y,
+            tile: 'fullHearth',
+            layer: player === 'me' ? 'hearthZoneMe' : 'hearthZoneEnemy'
+        },
+    ]);
+}
+
+const resetItemPosition = (player, itemsPosition, item) => {
+    console.log(player)
+    console.log(itemsPosition)
+    console.log(item)
+    let loop = 1
+    for (let i = 1; i <= 3; i++) {
+       item === 'hearth' ? resetHearth(player, itemsPosition[loop]) : removeCanonBall(itemsPosition[loop], player)
+        loop ++
+    }
+}
+
 const resetGame = () => {
+    console.log('reset')
+    me.canonBall = 0
+    me.hearth = 3
+    enemy.canonBall = 0
+    enemy.hearth = 3
+    resetItemPosition('me', me.hearthPosition, 'hearth')
+    resetItemPosition('me', me.canonBallPosition, 'canonBall')
+    resetItemPosition('enemy', enemy.hearthPosition, 'hearth')
+    resetItemPosition('enemy', enemy.canonBallPosition, 'canonBall')
+    endGame = false
+}
+
+const oldresetGame = () => {
     if(window.location.href.indexOf("attack-test-reset.json") === -1){
         WA.nav.goToRoom('./attack-test.json')
     }else{
@@ -185,7 +220,7 @@ const enemyAttack = (playerAction) => {
     }, 500)
     if(playerAction !== 'protect'){
         me.hearth --
-        removeHearth(me.hearthPosition[me.hearth], 'me')
+        removeHearth(me.hearthPosition[me.hearth+1], 'me')
     }
     if(sendChatComment){
         WA.chat.sendChatMessage(`J\'attaque` , 'Enemy')
@@ -224,7 +259,6 @@ const randomNumbers = (min, max) => {
 }
 
 const enemyAction = (playerAction)=> {
-
     if(enemy.canonBall === 0){
         if(enemy.hearth === 1){
             const action3 = randomNumbers(1, 2)
@@ -238,7 +272,7 @@ const enemyAction = (playerAction)=> {
         }
     }else{
         const action = randomNumbers(1, 3)
-        if(action === 1 && me.canonBall > 0) {
+        if(action === 1) {
             enemyProtect()
         }
         if(action === 2) {
@@ -262,8 +296,9 @@ const enemyAction = (playerAction)=> {
 
 let displayData = () => {
     if(sendChatComment){
-        WA.chat.sendChatMessage(`coeur : ${enemy.hearth}, munition : ${enemy.canonBall}`, 'Enemy')
-        WA.chat.sendChatMessage(`coeur : ${me.hearth}, munition : ${me.canonBall}`, 'Moi')
+        displayRound()
+        WA.chat.sendChatMessage(`coeur : ${enemy.hearthPosition.x}, munition : ${enemy.canonBall}`, 'Enemy')
+        WA.chat.sendChatMessage(`coeur : ${me.hearthPosition.x}, munition : ${me.canonBall}`, 'Moi')
     }
 
     if(enemy.hearth === 0){
@@ -289,7 +324,6 @@ WA.room.onEnterLayer('protectZone').subscribe(() => {
                 resetGame()
             }else{
                 displayShield('me')
-                displayRound()
                 enemyAction('protect')
                 if(sendChatComment) {
                     WA.chat.sendChatMessage('Je me protège', 'Moi')
@@ -311,7 +345,6 @@ WA.room.onEnterLayer('attackZone').subscribe(() => {
             if(endGame){
                 resetGame()
             }else{
-                displayRound()
                 if(me.canonBall > 0){
                     enemyAction('attack')
                     toggleLayersVisibility('bangMe', true)
@@ -346,9 +379,7 @@ WA.room.onEnterLayer('reloadZone').subscribe(() => {
         callback: () => {
             if(endGame){
                 resetGame()
-
             }else{
-                displayRound()
                 if(me.canonBall !== 3){
                     enemyAction('reload')
                     me.canonBall ++
