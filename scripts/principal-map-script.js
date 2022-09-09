@@ -427,3 +427,18 @@ for (let i = 0; i < pannelsKeys.length; i++) {
         currentPopup.close()
     })
 }
+var mySound = WA.sound.loadSound("../sounds/Sweet Nostalgia.mp3");
+var soundConfig = {
+    volume : 0.02,
+    loop : true,
+    rate : 1,
+    detune : 1,
+    delay : 0,
+    seek : 0,
+    mute : false
+}
+mySound.play(soundConfig);
+
+WA.room.onEnterLayer('sortieAvalon').subscribe(() => {
+   mySound.stop();
+})

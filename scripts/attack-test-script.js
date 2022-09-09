@@ -2,40 +2,6 @@ import { } from "https://unpkg.com/@workadventure/scripting-api-extra@^1";
 import {attackTestRuleName} from './constants/character-names.js';
 import {attackTestRules} from './constants/maps-game-rules.js';
 import {wait, monologue, toggleLayersVisibility} from "./utils.js";
-//
-// WA.room.onEnterLayer('startRacing').subscribe( async()=> {
-//     const startTime = new Date
-//     WA.player.state.startTime = startTime.getTime()
-// })
-//
-// WA.room.onEnterLayer('stopRacing').subscribe( async()=> {
-//     const stopTime = new Date
-//     WA.player.state.stopTime = stopTime.getTime()
-//
-//     const msg =  new Date(WA.player.state.stopTime - WA.player.state.startTime)
-//
-//     if(msg > 90000){
-//         WA.chat.sendChatMessage('Bouuuuuh t\'es nul, Try Again !', "Maitre du temps")
-//         WA.nav.goToRoom('./racing-test.json');
-//     } else{
-//         WA.chat.sendChatMessage('Oooh? BRAVO ! T\'es finalement pas si nul', "Maitre du temps")
-//     }
-//     const formatMsgSec = msg.getUTCHours()+
-//         "h "+msg.getMinutes()+
-//         "min "+msg.getSeconds() +
-//         ","+msg.getMilliseconds()+ "s";
-//     WA.chat.sendChatMessage(`${formatMsgSec}`, "Maitre du temps")
-// })
-//
-// WA.room.onEnterLayer('stop').subscribe(() => {
-//     WA.controls.disablePlayerControls()
-//
-//     setTimeout(()=> {
-//         WA.controls.restorePlayerControls()
-//
-//     }, 500)
-//
-// });
 
 let me = {
     hearth: 3,
@@ -297,6 +263,7 @@ const exit =  () => {
     WA.ui.displayActionMessage({
     message: "Terre en vue ! Voulez-vous ammarer ?",
     callback: () => {
+        mySound.stop();
         WA.nav.goToRoom('./racing-test.json')
         }
     })
@@ -308,18 +275,15 @@ let displayData = () => {
         WA.chat.sendChatMessage(`coeur : ${enemy.hearthPosition.x}, munition : ${enemy.canonBall}`, 'Enemy')
         WA.chat.sendChatMessage(`coeur : ${me.hearthPosition.x}, munition : ${me.canonBall}`, 'Moi')
     }
-
-    if(enemy.hearth === 0){
+    if(enemy.hearth === 0 && me.hearth === 0){
+        WA.chat.sendChatMessage('Ah en voilà une bonne ! Vos deux navires sont foutus !! Tu n\'as plus qu\'à recommencer...', 'Roi des pirates')
+        endGame = true
+    }else if(enemy.hearth === 0 && me.hearth > 0){
         WA.chat.sendChatMessage('Bravo Matelot ! Tu as coulé le navire ennemie !!', 'Roi des pirates')
         endGame = true
         exit()
-    }
-    if(me.hearth === 0){
+    }else if(me.hearth === 0 && enemy.hearth > 0){
         WA.chat.sendChatMessage('Mais qu\'est ce que t\'as foutu ton navire est coulé !', 'Roi des pirates')
-        endGame = true
-    }
-    if(enemy.hearth === 0 && me.hearth === 0){
-        WA.chat.sendChatMessage('Ah en voilà une bonne ! Vos deux navires sont foutus !! Tu n\'as plus qu\'à recommencer...', 'Roi des pirates')
         endGame = true
     }
 }
@@ -424,4 +388,15 @@ WA.room.onLeaveLayer('tuto').subscribe(() => {
     triggerTuto.remove()
 })
 
+var mySound = WA.sound.loadSound("../sounds/attack.mp3");
+var soundConfig = {
+    volume : 0.2,
+    loop : true,
+    rate : 1,
+    detune : 1,
+    delay : 0,
+    seek : 0,
+    mute : false
+}
+mySound.play(soundConfig);
 

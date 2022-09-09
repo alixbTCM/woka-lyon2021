@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="154804f8-a4f2-45a9-bced-0b7f3f631b1f" name="Changes" comment="attack test exit">
+    <list default="true" id="154804f8-a4f2-45a9-bced-0b7f3f631b1f" name="Changes" comment="water test fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maps/water-test.json" beforeDir="false" afterPath="$PROJECT_DIR$/maps/water-test.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/constants/maps-game-rules.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/constants/maps-game-rules.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/attack-test-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/attack-test-script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/escape-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/escape-script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/final-map-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/final-map-script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/graal.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/graal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/principal-map-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/principal-map-script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/racing-test-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/racing-test-script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/water-test-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/water-test-script.js" afterDir="false" />
     </list>
@@ -130,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662709343032</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="water test fix">
+      <created>1662711494632</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1662711494632</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +167,7 @@
     <MESSAGE value="pull master" />
     <MESSAGE value="merge master" />
     <MESSAGE value="attack test exit" />
-    <option name="LAST_COMMIT_MESSAGE" value="attack test exit" />
+    <MESSAGE value="water test fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="water test fix" />
   </component>
 </project>

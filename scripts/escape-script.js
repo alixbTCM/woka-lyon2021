@@ -354,3 +354,18 @@ for (let i = 0; i<openZonesKeys.length; i++) {
         layerTrigger.remove()
     })
 }
+
+var mySound = WA.sound.loadSound("../sounds/chill.mp3");
+var soundConfig = {
+    volume : 0.2,
+    loop : true,
+    rate : 1,
+    detune : 1,
+    delay : 0,
+    seek : 0,
+    mute : false
+}
+mySound.play(soundConfig);
+WA.room.onEnterLayer('exit').subscribe(() => {
+    mySound.stop();
+})

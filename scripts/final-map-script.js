@@ -23,6 +23,7 @@ WA.room.onEnterLayer('getSwordZone').subscribe(() => {
                 callback: (popup) => {
                     WA.nav.goToRoom('./map.json')
                     popup.close();
+                    mySound.stop()
                 }
             }]);
         }
@@ -33,3 +34,15 @@ WA.room.onLeaveLayer('getSwordZone').subscribe(() => {
     actionMessage.remove()
     currentPopup.close()
 })
+
+var mySound = WA.sound.loadSound("../sounds/final.mp3");
+var soundConfig = {
+    volume : 0.2,
+    loop : true,
+    rate : 1,
+    detune : 1,
+    delay : 0,
+    seek : 0,
+    mute : false
+}
+mySound.play(soundConfig);
