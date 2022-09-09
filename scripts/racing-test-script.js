@@ -3,6 +3,8 @@ import {racingTestRuleName} from './constants/character-names.js';
 import {racingTestRules} from './constants/maps-game-rules.js';
 import {monologue, toggleLayersVisibility} from "./utils.js";
 
+const timeOut = 75000;
+const timeOutDate = new Date(timeOut)
 
 WA.room.onEnterLayer('startRacing').subscribe( async()=> {
     const startTime = new Date
@@ -15,8 +17,9 @@ WA.room.onEnterLayer('stopRacing').subscribe( async()=> {
 
     const msg =  new Date(WA.player.state.stopTime - WA.player.state.startTime)
 
-    if(msg > 90000){
-        WA.chat.sendChatMessage('Bouuuuuh t\'es nul, Try Again !', "Maitre du temps")
+    if(msg > timeOut){
+        WA.chat.sendChatMessage(`Bouuuuuh t\'es nul, Try Again ! Il faut que tu fasses moins de ${timeOutDate.getMinutes()+
+            "min "+timeOutDate.getSeconds()}`, "Maitre du temps")
         WA.nav.goToRoom('./racing-test.json');
     } else{
         WA.chat.sendChatMessage('Oooh? BRAVO ! T\'es finalement pas si nul', "Maitre du temps")
@@ -25,7 +28,7 @@ WA.room.onEnterLayer('stopRacing').subscribe( async()=> {
         "h "+msg.getMinutes()+
         "min "+msg.getSeconds() +
         ","+msg.getMilliseconds()+ "s";
-    WA.chat.sendChatMessage(`${formatMsgSec}`, "Maitre du temps")
+    WA.chat.sendChatMessage(`Tu as mis : ${formatMsgSec}`, "Maitre du temps")
 })
 
 WA.room.onEnterLayer('stop').subscribe(() => {
@@ -54,7 +57,7 @@ WA.room.onLeaveLayer('tuto').subscribe(() => {
 
 let triggerFakeEntryMessage
 WA.room.onEnterLayer('triggerFakeEntry').subscribe(() => {
-    endMessage = WA.ui.displayActionMessage({
+    triggerFakeEntryMessage = WA.ui.displayActionMessage({
         message: "BOUH",
     })
     toggleLayersVisibility('fakeEntry')

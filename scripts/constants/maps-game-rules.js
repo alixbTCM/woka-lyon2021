@@ -11,8 +11,8 @@ const escapeMapeGameRules = [
 ]
 
 const waterTestRules = [
-    "De l'autre côté de la rive se trouve le mirroir qui vous enménera vers la prochaine épreuve. ",
-    "C'est très simple, il vous suffit de traverser, qu'attendez-vous?"
+    "Vous avez survécu à votre chute dans l'eau en trouvant in extremis une grotte... Il va falloir réussir à en sortir maintenant... ",
+    "C'est très simple, il vous suffit dans un premier temps de traverser, qu'attendez-vous?"
 ]
 
 const racingTestRules = [
@@ -24,12 +24,12 @@ const racingTestRules = [
 
 const attackTestRules = [
     'Hé ho matelot !',
-    'Tu dois maintenant prouver ta valeur en mer, ah ! Ca tombe bien, voilà un navire enemie.',
-    'Coule moi ce bateau rempli de raclûres ! Pour ça tu vas devoir utiliser le canon qui est devant toi. Les règles sont simples, tu peux faire trois actions (ton adversaire peut faire de même) :',
-    '- Recharger : Il te faut des boulets à mettre dans ton canon, tu dois en mettre trois maximum',
+    'Tu dois maintenant prouver ta valeur en mer afin de pouvoir rejoindre la terre ferme, ah ! Ca tombe bien, voilà un navire ennemi.',
+    'Coule moi ce bateau rempli de raclûres ! Pour ça tu vas devoir utiliser le canon qui est devant toi. Les règles sont simples, tu peux faire trois actions (ton adversaire peut faire les mêmes) :',
+    '- Recharger : Il te faut des boulets à mettre dans ton canon, tu peux en charger trois maximum',
     '- Se protéger : Te protège du tire adverse, ton navire ne prend pas de dégât',
     '- Tirer : Tu utilises une de tes munitions et tu tires ! Si l\'adversaire ne se protège pas, il prend un dégât',
-    'Ton navire comme celui de ton adversaire peut encaisser 3 tires.'
+    'Ton navire comme celui de ton adversaire peut encaisser 3 tires. Vous faîtes vos actions simultanément donc tu as le temps de réfléchir !'
 
 ]
 
