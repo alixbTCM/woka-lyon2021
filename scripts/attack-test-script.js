@@ -251,7 +251,6 @@ const displayRound = () => {
         WA.chat.sendChatMessage('############################' , 'ROUND')
         round ++
     }
-
 }
 
 const randomNumbers = (min, max) => {
@@ -294,6 +293,15 @@ const enemyAction = (playerAction)=> {
     }
 }
 
+const exit =  () => {
+    WA.ui.displayActionMessage({
+    message: "Terre en vue ! Voulez-vous ammarer ?",
+    callback: () => {
+        WA.nav.goToRoom('./racing-test.json')
+        }
+    })
+};
+
 let displayData = () => {
     if(sendChatComment){
         displayRound()
@@ -304,6 +312,7 @@ let displayData = () => {
     if(enemy.hearth === 0){
         WA.chat.sendChatMessage('Bravo Matelot ! Tu as coulé le navire ennemie !!', 'Roi des pirates')
         endGame = true
+        exit()
     }
     if(me.hearth === 0){
         WA.chat.sendChatMessage('Mais qu\'est ce que t\'as foutu ton navire est coulé !', 'Roi des pirates')
