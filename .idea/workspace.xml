@@ -3,11 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="154804f8-a4f2-45a9-bced-0b7f3f631b1f" name="Changes" comment="pull master">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/attack-test.json" beforeDir="false" afterPath="$PROJECT_DIR$/maps/attack-test.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/racing-test.json" beforeDir="false" afterPath="$PROJECT_DIR$/maps/racing-test.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/escape.json" beforeDir="false" afterPath="$PROJECT_DIR$/maps/escape.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/graal.json" beforeDir="false" afterPath="$PROJECT_DIR$/maps/graal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/map.json" beforeDir="false" afterPath="$PROJECT_DIR$/maps/map.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maps/water-test.json" beforeDir="false" afterPath="$PROJECT_DIR$/maps/water-test.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/racing-test-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/racing-test-script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/water-test-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/water-test-script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,17 +30,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/maps" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="C:\Projets\woka-lyon2021\node_modules\typescript\lib" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ts.external.directory.path": "/Users/alb/Documents/ProjetsTCM/woka-lyon2021/node_modules/typescript/lib"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Projets\woka-lyon2021\maps" />
