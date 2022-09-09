@@ -150,7 +150,7 @@
                 {
                  "name":"exitUrl",
                  "type":"string",
-                 "value":".\/racing-test.json"
+                 "value":".\/attack-test.json"
                 }],
          "type":"tilelayer",
          "visible":false,

@@ -306,7 +306,7 @@
                 {
                  "name":"exitUrl",
                  "type":"string",
-                 "value":"\/water-test.json"
+                 "value":".\/final-map.json"
                 }],
          "type":"tilelayer",
          "visible":true,
