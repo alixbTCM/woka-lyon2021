@@ -7,7 +7,7 @@ import {
     selectRandomItemInArray
 } from './utils.js'
 import { principalMapLayers } from './constants/maps-layers.js'
-import { principalMapDialogs, dialogUtils } from './constants/maps-dialogs.js'
+import {principalMapDialogs, dialogUtils, finalMapDalogs} from './constants/maps-dialogs.js'
 import { oldManName, ladyOfTheLakeName, myselfName, omnipotentCharacter} from './constants/character-names.js';
 import { principalMapAnimationLayers } from './constants/maps-animation-layers.js'
 import { principalMapChatCommands } from './constants/chat-commands.js'
@@ -433,6 +433,38 @@ for (let i = 0; i < pannelsKeys.length; i++) {
     })
 }
 
+// Sortie vers Paris
+let parisPopup
+WA.room.onEnterLayer('toParis').subscribe(() => {
+    console.log('Vers paris')
+    parisPopup = WA.ui.openPopup('parisPopup', 'Où souhaitez-vous vous rendre ?', [{
+        label: "Rez-de-chaussée",
+        callback: (popup) => {
+            // Redirection vers Paris RDC
+            WA.nav.goToRoom('/@/tcm/workadventure/floor0#start-tcm')
+        }
+    },
+        {
+            label: "Étage 1",
+            callback: (popup) => {
+                // Redirection vers Paris Étage 1
+                WA.nav.goToRoom('/@/tcm/workadventure/floor1#from-floor0')
+            }
+        },
+        {
+            label: "Étage 2",
+            callback: (popup) => {
+                // Redirection vers Paris Étage 2
+                WA.nav.goToRoom('/@/tcm/workadventure/floor2#from-floor1-east')
+            }
+        }
+    ]);
+})
+
+WA.room.onLeaveLayer('toParis').subscribe(() => {
+    parisPopup.remove()
+})
+
 /* Map music */
 /* var mySound = WA.sound.loadSound("../sounds/Sweet Nostalgia.mp3");
 var soundConfig = {
@@ -446,6 +478,6 @@ var soundConfig = {
 }
 mySound.play(soundConfig); */
 
-WA.room.onEnterLayer('sortieAvalon').subscribe(() => {
+/* WA.room.onEnterLayer('sortieAvalon').subscribe(() => {
    mySound.stop();
-})
+}) */

@@ -86,12 +86,6 @@
          "id":41,
          "name":"toParis",
          "opacity":1,
-         "properties":[
-                {
-                 "name":"exitUrl",
-                 "type":"string",
-                 "value":"https:\/\/play.staging.workadventu.re\/@\/tcm\/workadventure\/floor0#start-tcm"
-                }],
          "type":"tilelayer",
          "visible":true,
          "width":30,
@@ -800,6 +794,17 @@
                  "width":126.667,
                  "x":54.6665,
                  "y":294.99985
+                }, 
+                {
+                 "height":119.617224880383,
+                 "id":50,
+                 "name":"parisPopup",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":221.88995215311,
+                 "x":608.851674641148,
+                 "y":353.468899521531
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1266,7 +1271,7 @@
          "y":0
         }],
  "nextlayerid":92,
- "nextobjectid":50,
+ "nextobjectid":51,
  "orientation":"orthogonal",
  "properties":[
         {
