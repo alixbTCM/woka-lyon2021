@@ -406,7 +406,6 @@ for (let i = 0; i < pannelsKeys.length; i++) {
     let actionMessage
     let currentPopup
     WA.room.onEnterLayer(pannelsKeys[i]).subscribe(() => {
-        console.log('coucou', actionMessage)
         actionMessage = WA.ui.displayActionMessage({
             message: getSentenceWithVariables(dialogUtils.executeAction, {
                 action: dialogUtils.see
@@ -424,9 +423,13 @@ for (let i = 0; i < pannelsKeys.length; i++) {
     })
 
     WA.room.onLeaveLayer(pannelsKeys[i]).subscribe(() => {
-        console.log('salut !', actionMessage)
-        actionMessage.remove()
-        currentPopup.close()
+        if (typeof actionMessage !== 'undefined') {
+            actionMessage.remove()
+        }
+
+        if (typeof currentPopup !== 'undefined') {
+            currentPopup.close()
+        }
     })
 }
 
