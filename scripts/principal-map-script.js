@@ -406,6 +406,7 @@ for (let i = 0; i < pannelsKeys.length; i++) {
     let actionMessage
     let currentPopup
     WA.room.onEnterLayer(pannelsKeys[i]).subscribe(() => {
+        console.log('coucou', actionMessage)
         actionMessage = WA.ui.displayActionMessage({
             message: getSentenceWithVariables(dialogUtils.executeAction, {
                 action: dialogUtils.see
@@ -423,11 +424,14 @@ for (let i = 0; i < pannelsKeys.length; i++) {
     })
 
     WA.room.onLeaveLayer(pannelsKeys[i]).subscribe(() => {
+        console.log('salut !', actionMessage)
         actionMessage.remove()
         currentPopup.close()
     })
 }
-var mySound = WA.sound.loadSound("../sounds/Sweet Nostalgia.mp3");
+
+/* Map music */
+/* var mySound = WA.sound.loadSound("../sounds/Sweet Nostalgia.mp3");
 var soundConfig = {
     volume : 0.02,
     loop : true,
@@ -437,7 +441,7 @@ var soundConfig = {
     seek : 0,
     mute : false
 }
-mySound.play(soundConfig);
+mySound.play(soundConfig); */
 
 WA.room.onEnterLayer('sortieAvalon').subscribe(() => {
    mySound.stop();
