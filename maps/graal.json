@@ -1203,7 +1203,7 @@
                 {
                  "name":"exitUrl",
                  "type":"string",
-                 "value":"\/final-map.json"
+                 "value":".\/final-map.json"
                 }],
          "type":"tilelayer",
          "visible":true,

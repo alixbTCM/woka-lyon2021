@@ -978,7 +978,7 @@
                 {
                  "name":"exitUrl",
                  "type":"string",
-                 "value":"\/graal.json"
+                 "value":".\/graal.json"
                 }],
          "type":"tilelayer",
          "visible":true,

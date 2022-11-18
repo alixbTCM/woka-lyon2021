@@ -82,7 +82,7 @@
                 {
                  "name":"exitUrl",
                  "type":"string",
-                 "value":"\/water-test.json"
+                 "value":".\/water-test.json"
                 }],
          "type":"tilelayer",
          "visible":true,

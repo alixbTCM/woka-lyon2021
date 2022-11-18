@@ -438,7 +438,7 @@
                 {
                  "name":"exitUrl",
                  "type":"string",
-                 "value":"\/attack-test.json"
+                 "value":".\/attack-test.json"
                 }],
          "type":"tilelayer",
          "visible":false,
