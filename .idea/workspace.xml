@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="154804f8-a4f2-45a9-bced-0b7f3f631b1f" name="Changes" comment="water test fix">
+    <list default="true" id="154804f8-a4f2-45a9-bced-0b7f3f631b1f" name="Changes" comment="add sound">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/escape.json" beforeDir="false" afterPath="$PROJECT_DIR$/maps/escape.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/graal.json" beforeDir="false" afterPath="$PROJECT_DIR$/maps/graal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/map.json" beforeDir="false" afterPath="$PROJECT_DIR$/maps/map.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/racing-test.json" beforeDir="false" afterPath="$PROJECT_DIR$/maps/racing-test.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maps/water-test.json" beforeDir="false" afterPath="$PROJECT_DIR$/maps/water-test.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/attack-test-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/attack-test-script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/escape-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/escape-script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/final-map-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/final-map-script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/graal.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/graal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/principal-map-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/principal-map-script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/racing-test-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/racing-test-script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/water-test-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/water-test-script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +34,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ts.external.directory.path": "/Users/alb/Documents/ProjetsTCM/woka-lyon2021/node_modules/typescript/lib"
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "ts.external.directory.path": "/Users/alb/Documents/ProjetsTCM/woka-lyon2021/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -70,6 +72,7 @@
       <workItem from="1655880984743" duration="54988000" />
       <workItem from="1659524919969" duration="2610000" />
       <workItem from="1662458871447" duration="5259000" />
+      <workItem from="1668789930136" duration="712000" />
     </task>
     <task id="LOCAL-00001" summary="water test setup">
       <created>1655888865291</created>
@@ -141,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662711494632</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="add sound">
+      <created>1662719583530</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1662719583530</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,6 +178,7 @@
     <MESSAGE value="merge master" />
     <MESSAGE value="attack test exit" />
     <MESSAGE value="water test fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="water test fix" />
+    <MESSAGE value="add sound" />
+    <option name="LAST_COMMIT_MESSAGE" value="add sound" />
   </component>
 </project>
