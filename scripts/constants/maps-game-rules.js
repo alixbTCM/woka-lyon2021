@@ -2,7 +2,7 @@ const graalMapGameRules = [
     'Vous devez trouver le saint Graal parmi les objets exposés dans la salle.',
     'De nombreux chevaliers s\'y sont essayés et ont échoué.',
     'En examinant la salle, peut-être trouverez vous des indices !',
-    'Attention à partir de maintenant, chaque erreur sera extrêmement punitif...',
+    'Les conséquences d\'un mauvais choix pourraient être terribles ! Tu dois choisir mais... Choisis judicieusement.',
 ]
 
 const escapeMapeGameRules = [

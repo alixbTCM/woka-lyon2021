@@ -3,17 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="154804f8-a4f2-45a9-bced-0b7f3f631b1f" name="Changes" comment="tdm fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/attack-test.json" beforeDir="false" afterPath="$PROJECT_DIR$/maps/ljdsqljds8KHID6atSDKJHKHD8SDKHSD7.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/escape.json" beforeDir="false" afterPath="$PROJECT_DIR$/maps/ljdsqljds8KHID6eSDKJHKHD8SDKHSD7.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/final-map.json" beforeDir="false" afterPath="$PROJECT_DIR$/maps/ljdsqljds8KHID6fmSDKJHKHD8SDKHSD7.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/graal.json" beforeDir="false" afterPath="$PROJECT_DIR$/maps/ljdsqljds8KHID6gSDKJHKHD8SDKHSD7.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/map.json" beforeDir="false" afterPath="$PROJECT_DIR$/maps/map.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/racing-test.json" beforeDir="false" afterPath="$PROJECT_DIR$/maps/ljdsqljds8KHID6rcSDKJHKHD8SDKHSD7.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/water-test.json" beforeDir="false" afterPath="$PROJECT_DIR$/maps/ljdsqljds8KHID6wtSDKJHKHD8SDKHSD7.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/constants/maps-dialogs.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/constants/maps-dialogs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/ljdsqljds8KHID6wtSDKJHKHD8SDKHSD7.json" beforeDir="false" afterPath="$PROJECT_DIR$/maps/ljdsqljds8KHID6wtSDKJHKHD8SDKHSD7.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/constants/maps-game-rules.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/constants/maps-game-rules.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/graal.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/graal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/principal-map-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/principal-map-script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/racing-test-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/racing-test-script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +74,8 @@
       <workItem from="1669018270621" duration="18000" />
       <workItem from="1669023832013" duration="3754000" />
       <workItem from="1669049437712" duration="1352000" />
-      <workItem from="1669633827611" duration="8157000" />
+      <workItem from="1669633827611" duration="8750000" />
+      <workItem from="1670257785713" duration="190000" />
     </task>
     <task id="LOCAL-00001" summary="water test setup">
       <created>1655888865291</created>
@@ -175,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668791492701</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="tdm fix">
+      <created>1670237723767</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1670237723767</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

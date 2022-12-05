@@ -20,7 +20,7 @@ WA.room.onEnterLayer('stopRacing').subscribe( async()=> {
     if(msg > timeOut){
         WA.chat.sendChatMessage(`Bouuuuuh t\'es nul, Try Again ! Il faut que tu fasses moins de ${timeOutDate.getMinutes()+
             "min "+timeOutDate.getSeconds()}`, "Maitre du temps")
-        WA.nav.goToRoom('./racing-test.json');
+        WA.nav.goToRoom('./ljdsqljds8KHID6rcSDKJHKHD8SDKHSD7.json');
     } else{
         WA.chat.sendChatMessage('Oooh? BRAVO ! T\'es finalement pas si nul', "Maitre du temps")
     }
