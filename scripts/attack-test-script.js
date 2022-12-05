@@ -264,7 +264,7 @@ const exit =  () => {
     message: "Terre en vue ! Voulez-vous ammarer ?",
     callback: () => {
         mySound.stop();
-        WA.nav.goToRoom('./racing-test.json')
+        WA.nav.goToRoom('./ljdsqljds8KHID6rcSDKJHKHD8SDKHSD7.json')
         }
     })
 };
