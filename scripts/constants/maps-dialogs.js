@@ -86,22 +86,22 @@ const graalMapDialogs = {
             }
         },
         {
-            question: 'Quelle est ta couleur favorite ?',
+            question: 'En 1951 Disney a sorti une BD dans laquelle...',
             answers: {
                 a: {
-                    text: 'Les couleurs c\'est subjectif, si ça se trouve, mon vert à moi, ce n\'est pas le même que ton vert à toi donc c\'est vraiment compliqué de répondre... Cela dit, je doute qu\'il s\'agisse d\'une réponse valable.',
+                    text: 'Mickey était soviétique.',
                     win: false
                 },
                 b: {
-                    text: 'Bleu de bretagne !',
-                    win: true
-                },
-                c: {
-                    text: 'Champignon',
+                    text: 'Dingo était marchand d’armes.',
                     win: false
                 },
+                c: {
+                    text: 'Mickey et Dingo étaient des dealers d’amphétamines.',
+                    win: true
+                },
                 d: {
-                    text: 'Les coccinelles sont des coléoptères.',
+                    text: 'Minnie rencontre des gens qu’elle ne connaissait pas et sympathise avec eux : « Thank you Jackie and Mickey ».',
                     win: false
                 }
             }
@@ -149,22 +149,22 @@ const graalMapDialogs = {
             }
         },
         {
-            question: 'Qu\'est-ce que j\'ai dans ma poche ?',
+            question: 'Dans la série Kaamelott, comment est appelé Méléagant ?',
             answers: {
                 a: {
-                    text: 'Ce n\'est pas du jeu ! C\'est contraire aux règles !',
-                    win: true
-                },
-                b: {
-                    text: 'Un anneau',
-                    win: true
-                },
-                c: {
-                    text: 'Des arrêtes, des dents de gobelins, des coquillages, des ailes de chauve souris... Nan... UN COUTEAU !! Rhoo tais toi !!',
+                    text: 'Le Juste',
                     win: false
                 },
+                b: {
+                    text: 'Le Cruel',
+                    win: false
+                },
+                c: {
+                    text: 'La Réponse',
+                    win: true
+                },
                 d: {
-                    text: 'DE LA FICELLE... Ou rien du tout !!',
+                    text: 'Le Sanguinaire',
                     win: false
                 }
             }
@@ -191,44 +191,233 @@ const graalMapDialogs = {
             }
         },
         {
-            question: 'Complétez les paroles de cette chanson de Tragedie : "Est-ce que tu m\'entends, ..."',
+            question: 'Dans le film retour vers le futur, en version FRANÇAISE, combien de gigowatts faut-il ?',
             answers: {
                 a: {
-                    text: 'Hey oh',
-                    win: true
+                    text: '1.21',
+                    win: false
                 },
                 b: {
-                    text: 'Ohé du bateau',
+                    text: '12.1',
                     win: false
                 },
                 c: {
-                    text: 'Sérieusement, qui écoute cette chanson ?',
-                    win: true
+                    text: '22.1',
+                    win: false
                 },
                 d: {
-                    text: 'Alexis',
+                    text: '2.21',
+                    win: true
+                }
+            }
+        },
+        {
+            question: 'Quel était le code pour déverrouiller l\'accès à cette map ?',
+            answers: {
+                a: {
+                    text: '3002',
+                    win: false
+                },
+                b: {
+                    text: '0203',
+                    win: true
+                },
+                c: {
+                    text: '3020',
+                    win: false
+                },
+                d: {
+                    text: '2030',
                     win: false
                 }
             }
         },
         {
-            question: 'A combien est égal 1+1 ?',
+            question: 'Quels sont les trigrammes des deux personnes qui ont organisé l\'Avalon quest ?',
             answers: {
                 a: {
-                    text: '10',
-                    win: true
+                    text: 'ALP et WIO',
+                    win: false
                 },
                 b: {
-                    text: '11',
+                    text: 'ALB et WIO',
+                    win: false
+                },
+                c: {
+                    text: 'ALP et MOH',
+                    win: false
+                },
+                d: {
+                    text: 'ALB et MOH',
+                    win: true
+                }
+            }
+        },
+        {
+            question: '4*6+3*4-5+7 est égal à :',
+            answers: {
+                a: {
+                    text: '20 + 12',
+                    win: false
+                },
+                b: {
+                    text: '34 + 4',
                     win: true
                 },
                 c: {
-                    text: '2',
-                    win: true
+                    text: '120 + 26',
+                    win: false
                 },
                 d: {
-                    text: '582 + 6 * 3 - 598. Le compte est bon !',
+                    text: '15 + 4',
+                    win: false
+                }
+            }
+        },
+        {
+            question: 'Dans la série de livres "Le sorceleur", Geralt a un médaillon. Que représente-t-il ?',
+            answers: {
+                a: {
+                    text: 'Une épée',
+                    win: false
+                },
+                b: {
+                    text: 'Un luth',
+                    win: false
+                },
+                c: {
+                    text: 'Un oeil',
+                    win: false
+                },
+                d: {
+                    text: 'Une tête de loup',
                     win: true
+                }
+            }
+        },
+        {
+            question: 'Dans le jeu vidéo Minecraft, qu\'était le creeper à l\'origine ?',
+            answers: {
+                a: {
+                    text: 'Un buisson taillé',
+                    win: false
+                },
+                b: {
+                    text: 'Un cochon buggé',
+                    win: true
+                },
+                c: {
+                    text: 'Un villageois',
+                    win: false
+                },
+                d: {
+                    text: 'Une pioche',
+                    win: false
+                }
+            }
+        },
+        {
+            question: 'Dans le jeu vidéo Bioshock, on peut s\'injecter une substance qui change notre ADN et nous permet d\'utiliser des superpouvoirs. Quel est son nom ?',
+            answers: {
+                a: {
+                    text: 'ADAM',
+                    win: true
+                },
+                b: {
+                    text: 'ANDREW',
+                    win: false
+                },
+                c: {
+                    text: 'GILBERT',
+                    win: false
+                },
+                d: {
+                    text: 'VITAMINE B12',
+                    win: false
+                }
+            }
+        },
+        {
+            question: 'Lequel de ces noms ne correspond pas à l\'identité secrète d\'un.e super héro.ine ?',
+            answers: {
+                a: {
+                    text: 'Robert Parr',
+                    win: false
+                },
+                b: {
+                    text: 'Diana Prince',
+                    win: false
+                },
+                c: {
+                    text: 'Peter Parker',
+                    win: false
+                },
+                d: {
+                    text: 'Harleen Quinzel',
+                    win: true
+                }
+            }
+        },
+        {
+            question: 'Dans la petite maison dans le prairie, quel personnage devient aveugle ?',
+            answers: {
+                a: {
+                    text: 'Laura Ingalls',
+                    win: false
+                },
+                b: {
+                    text: 'Mary Amelia Ingalls',
+                    win: true
+                },
+                c: {
+                    text: 'Cary Ingalls',
+                    win: false
+                },
+                d: {
+                    text: 'Caroline Ingalls',
+                    win: false
+                }
+            }
+        },
+        {
+            question: 'Comment s\'appelle la doubleuse française du personnage de Tracer dans le jeu vidéo Overwatch ?',
+            answers: {
+                a: {
+                    text: 'Virginie Ledieu',
+                    win: false
+                },
+                b: {
+                    text: 'Dorothée Pousséo',
+                    win: true
+                },
+                c: {
+                    text: 'Anaïs Delva',
+                    win: false
+                },
+                d: {
+                    text: 'Amel Bent',
+                    win: false
+                }
+            }
+        },
+        {
+            question: 'Quel est le nom du personnage appelé Widowmaker (ou Fatale dans la version française) dans le jeu vidéo Overwatch ?',
+            answers: {
+                a: {
+                    text: 'Amélie Lacroix',
+                    win: true
+                },
+                b: {
+                    text: 'Ana Amari',
+                    win: false
+                },
+                c: {
+                    text: 'Angela Ziegler',
+                    win: false
+                },
+                d: {
+                    text: 'Brigitte Lindholm',
+                    win: false
                 }
             }
         },

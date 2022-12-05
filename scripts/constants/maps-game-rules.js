@@ -1,13 +1,14 @@
 const graalMapGameRules = [
     'Vous devez trouver le saint Graal parmi les objets exposés dans la salle.',
     'De nombreux chevaliers s\'y sont essayés et ont échoué.',
-    'En examinant la salle, peut-être trouverez vous des indices !'
+    'En examinant la salle, peut-être trouverez vous des indices !',
+    'Attention à partir de maintenant, chaque erreur sera extrêmement punitif...',
 ]
 
 const escapeMapeGameRules = [
     'Qui OSE pénétrer en ma demeure ?!?',
     'ALORS COMME ÇA, VOUS VOUS PENSEZ DIGNE D\'AVALON ?',
-    'Voyons déjà si vous parvenez à sortir d\'ici vivants !'
+    'Voyons déjà si vous parvenez à sortir d\'ici vivants !',
 ]
 
 const waterTestRules = [

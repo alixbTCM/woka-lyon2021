@@ -466,7 +466,7 @@ WA.room.onLeaveLayer('toParis').subscribe(() => {
 })
 
 /* Map music */
-/* var mySound = WA.sound.loadSound("../sounds/Sweet Nostalgia.mp3");
+var mySound = WA.sound.loadSound("../sounds/Sweet Nostalgia.mp3");
 var soundConfig = {
     volume : 0.02,
     loop : true,
@@ -476,8 +476,8 @@ var soundConfig = {
     seek : 0,
     mute : false
 }
-mySound.play(soundConfig); */
+mySound.play(soundConfig);
 
-/* WA.room.onEnterLayer('sortieAvalon').subscribe(() => {
+WA.room.onEnterLayer('sortieAvalon').subscribe(() => {
    mySound.stop();
-}) */
+})

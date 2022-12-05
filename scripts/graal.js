@@ -246,6 +246,7 @@ for (let i = 0; i < graalCluesKeys.length; i++) {
                     ])
                     WA.chat.sendChatMessage("Bien joué, tu peux continuer ta quête !", fisherKing)
                 } else {
+                    mySound.stop();
                     WA.nav.goToRoom('./map.json')
                 }
             }
