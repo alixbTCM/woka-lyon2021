@@ -1,5 +1,5 @@
 const principalMapChatCommands = {
-    avalonUnlockingCommand: "avalon",
+    // avalonUnlockingCommand: "avalon",
     randomPlayerInMapCommand: "ploufplouf",
     playersInRoomsCommand: "getplayersinrooms"
 }

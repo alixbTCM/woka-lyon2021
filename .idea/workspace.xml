@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="154804f8-a4f2-45a9-bced-0b7f3f631b1f" name="Changes" comment="tdm fix" />
+    <list default="true" id="154804f8-a4f2-45a9-bced-0b7f3f631b1f" name="Changes" comment="tdm fix">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/constants/chat-commands.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/constants/chat-commands.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/principal-map-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/principal-map-script.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,7 +74,7 @@
       <workItem from="1669023832013" duration="3754000" />
       <workItem from="1669049437712" duration="1352000" />
       <workItem from="1669633827611" duration="8750000" />
-      <workItem from="1670257785713" duration="721000" />
+      <workItem from="1670257785713" duration="2300000" />
     </task>
     <task id="LOCAL-00001" summary="water test setup">
       <created>1655888865291</created>
@@ -191,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670259888992</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="tdm fix">
+      <created>1670259973047</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1670259973047</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
