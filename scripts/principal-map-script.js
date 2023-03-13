@@ -441,21 +441,21 @@ WA.room.onEnterLayer('toParis').subscribe(() => {
         label: "Rez-de-chaussée",
         callback: (popup) => {
             // Redirection vers Paris RDC
-            WA.nav.goToPage('https://play.staging.workadventu.re/@/tcm/workadventure/floor0#start-tcm')
+            WA.nav.goToPage('https://play.staging.workadventu.re/~/tcm/workadventure/tcm/rdc.tmj#start-tcm')
         }
     },
         {
             label: "Étage 1",
             callback: (popup) => {
                 // Redirection vers Paris Étage 1
-                WA.nav.goToPage('https://play.staging.workadventu.re/@/tcm/workadventure/floor1#from-floor0')
+                WA.nav.goToPage('https://play.staging.workadventu.re/~/tcm/workadventure/tcm/1er.tmj#from-floor0')
             }
         },
         {
             label: "Étage 2",
             callback: (popup) => {
                 // Redirection vers Paris Étage 2
-                WA.nav.goToPage('https://play.staging.workadventu.re/@/tcm/workadventure/floor2#from-floor1-east')
+                WA.nav.goToPage('https://play.staging.workadventu.re/~/tcm/workadventure/tcm/2eme.tmj#from-floor1-east')
             }
         },
         {
